@@ -1,10 +1,13 @@
-<main class="box-border bg-gradient-to-tr from-blue-500 to-blue-700 text-white p-4">
-  <div class="size-full box-border p-2 bg-slate-50/[.3] rounded-xl">
+<main class="font-sans box-border bg-gradient-to-tr from-blue-500 to-blue-700 text-white lg:p-5 md:p-4 sm:p-0">
+  <div class="size-full box-border p-2 bg-slate-50/[.3] md:rounded-xl">
     <div class="size-full flex justify-center bg-white/[.9] rounded-xl px-4 pt-8 pb-2 text-black">
       <div class="lg:w-6/12 md:w-11/12 sm:w-full">
-        <div class="flex justify-between">
-          <div class="text-gray-900 text-4xl font-medium">Blogs</div>
-          <div class="text-gray-500 self-end">Mohit's Blogs</div>
+        <div class="flex justify-between mb-8 select-none">
+          <div [routerLink]="['/']" class="text-gray-900 text-4xl font-bold cursor-pointer hover:text-gray-500">Blogs</div>
+          <div class="flex gap-10 self-end">
+            <div class="text-gray-500 self-center hover:text-gray-900">Mohit's Blogs</div>
+            <!-- <mat-slide-toggle [disabled]="disabled" class="text-red-500"></mat-slide-toggle> -->
+          </div>
         </div>
         <router-outlet/>
       </div>
