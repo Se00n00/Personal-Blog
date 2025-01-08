@@ -5,7 +5,7 @@ import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-articles',
-  imports: [MatIconModule, RouterLink, CommonModule,],
+  imports: [MatIconModule, CommonModule,],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './articles.component.html',
   styleUrl: './articles.component.css'

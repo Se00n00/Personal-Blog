@@ -1,5 +1,5 @@
 <input type="text" name="" placeholder="Search" class="w-full box-border shadow hover:shadow-xl rounded-lg h-12 pl-4 transition-shadow my-3 md:my-6">
-<div class="flex flex-wrap gap-10 pt-4 w-full mb-4 justify-center">
+<div class="md:grid md:grid-cols-2 flex flex-wrap gap-10 pt-4 w-full mb-4 justify-center">
     <div [routerLink]="['/article']" class="flex flex-col text-gray-800/[0.7] hover:text-black/[0.7] cursor-pointer w-full">
         <div class="bg-cyan-700 h-64 rounded-xl mb-4 shadow-sm hover:saturate-200 hover:scale-95 transition-all">
             <img src="" alt="">
@@ -36,4 +36,42 @@
             </div>
         </div>
     </div>
+    <div [routerLink]="['/article']" class="flex flex-col text-gray-800/[0.7] hover:text-black/[0.7] cursor-pointer w-full">
+        <div class="bg-cyan-700 h-64 rounded-xl mb-4 shadow-sm hover:saturate-200 hover:scale-95 transition-all">
+            <img src="" alt="">
+        </div>
+        <div class="text-sm text-gray-600">{{type | uppercase}}</div>
+        <div class="text-2xl font-semibold">The best Website design practices</div>
+        <div class="text-base">Learn how to design user-friendly websites that converts and give unforgettable experience.</div>
+        <div class="flex justify-between mt-5">
+            <div class="flex gap-1">
+                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="remove_red_eye" class="text-zinc-800/[0.5] hover:text-zinc-800"></mat-icon>
+                {{numView}}
+            </div>
+            <div class="flex gap-1">
+                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="favorite" class="text-red-500 hover:text-red-600"></mat-icon>
+                {{numLiked}}
+            </div>
+        </div>
+    </div>
+    <div [routerLink]="['/article']" class="flex flex-col text-gray-800/[0.7] hover:text-black/[0.7] cursor-pointer w-full">
+        <div class="bg-cyan-700 h-64 rounded-xl mb-4 shadow-sm hover:saturate-200 hover:scale-95 transition-all">
+            <img src="" alt="">
+        </div>
+        <div class="text-sm text-gray-600">{{type | uppercase}}</div>
+        <div class="text-2xl font-semibold">The best Website design practices</div>
+        <div class="text-base">Learn how to design user-friendly websites that converts and give unforgettable experience.</div>
+        <div class="flex justify-between mt-5">
+            <div class="flex gap-1">
+                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="remove_red_eye" class="text-zinc-800/[0.5] hover:text-zinc-800"></mat-icon>
+                {{numView}}
+            </div>
+            <div class="flex gap-1">
+                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="favorite" class="text-red-500 hover:text-red-600"></mat-icon>
+                {{numLiked}}
+            </div>
+        </div>
+    </div>
+    
+    
 </div>
