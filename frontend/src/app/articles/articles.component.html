@@ -2,7 +2,11 @@
 
     <div class="flex gap-5 my-2 md:my-6">
         <img src="" alt="" class="h-12 w-12 rounded-3xl border-2 border-gray-700">
-        <a href="" class="flex items-center font-semibold text-xl">Mohit Kumar</a>
+        <div class="flex justify-between w-full">
+            <a href="#" class="flex items-center font-medium text-xl">Mohit Kumar</a>
+            <a href="#" class="flex items-center text-black/[0.7] text-xs font-content">follow</a>
+        </div>
+        
     </div>
     <div class="relative text-3xl font-semibold mb-1">
         The best Website design practices
@@ -14,4 +18,75 @@
         <img src="" alt="">
         <div class="absolute bottom-3 right-4 text-sm text-gray-300">{{type | uppercase}}</div>
     </div>
+
+    <!-- START HERE -->
+     <fieldset class="relative border-2 border-black rounded-lg my-2 overflow-hidden ">
+        <legend class="mx-4 p-2 text-black/[0.5]">
+            > {{codeLanguage}}
+            <span class="absolute right-4 top-0 bg-gray-50 border-2 border-black p-1 rounded-md cursor-pointer material-symbols-outlined">content_copy</span>
+        </legend>
+        <pre class="px-4 pb-3 flex flex-wrap"><code >{{code}}</code></pre>
+     </fieldset>
+    <div class="flex flex-wrap gap-2 select-none my-2">
+        @for (item of items; track $index) {
+            <div class="shadow-sm text-gray-700/[0.8] font-thin text-sm hover:shadow-md border-2 border-gray-400/[0.1] px-2 py-1 rounded-full bg-slate-900/[0.1]">{{tagName}}</div>
+        }
+    </div>
+    <p class="my-2 text-3xl font-medium">{{headingText}}</p>
+    <p class="my-2 text-xl font-medium">{{subHeadingText}}</p>
+    <ul class="list-disc flex flex-col pl-10 my-2">
+        <li class="">{{listItem}}</li>
+    </ul>
+    <p class="italic font-thin my-2">{{quoteText}} lorem100</p>
+    <p class="my-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis enim cupiditate dicta aut. Praesentium, obcaecati illum. Odio alias delectus, perferendis suscipit tenetur impedit ut unde! Sequi obcaecati fugit blanditiis veritatis maiores? Vel, accusantium hic. Numquam corporis velit voluptates illum similique vero ipsam optio, animi eaque perspiciatis, eos repellat amet obcaecati ad aperiam praesentium sed officiis dicta fugit officia unde itaque assumenda fuga nesciunt. Architecto, asperiores quibusdam ratione obcaecati eos sint, provident repudiandae nostrum similique quis libero? Possimus animi ipsam repudiandae labore impedit nihil placeat ducimus, esse voluptatibus temporibus accusantium non. Ea iure maxime a aut culpa et vel earum ab?</p>
+    <div class="object-contain flex flex-col gap-1 my-2">
+        <img src= "{{imageSrc}}" alt="an image" class="flex-1 self-center rounded-md shadow-sm hover:saturate-150">
+        <p class="flex-1 self-center text-black/[0.7]">{{ImageTitle}}</p>
+    </div>
+    <!-- END -->
+
+
+    <!-- START HERE -->
+    @switch (conditioned) {
+        @case ("quote") {
+            <p class="italic font-thin my-2">{{quoteText}}</p>
+        }
+        @case ("image") {
+            <div class="object-contain flex flex-col gap-2 my-3">
+                <img src= "{{imageSrc}}" alt="an image" class="flex-1 self-center rounded-md shadow-sm hover:saturate-150">
+                <p class="flex-1 self-center text-black/[0.7]">{{ImageTitle}}</p>
+            </div>
+        }
+        @case ("text") {
+            <p class="my-2">{{text}}</p>
+        }
+        @case ("heading") {
+            <p class="my-2 text-3xl font-medium">{{headingText}}</p>
+        }
+        @case ("subHeading") {
+            <p class="my-2 text-xl font-medium">{{subHeadingText}}</p>
+        }
+        @case ("code") {
+            <fieldset class="relative border-2 border-black rounded-lg my-2 overflow-hidden ">
+                <legend class="mx-4 p-2 text-black/[0.5]">
+                    > {{codeLanguage}}
+                    <span class="absolute right-4 top-0 bg-gray-50 border-2 border-black p-1 rounded-md cursor-pointer material-symbols-outlined">content_copy</span>
+                </legend>
+                <pre class="px-4 pb-3 flex flex-wrap"><code >{{code}}</code></pre>
+            </fieldset>
+        }
+        @case ("list") {
+            <ul class="list-disc flex flex-col pl-10 my-2">
+                <li class="">{{listItem}}</li>
+            </ul>
+        }
+        @case ("tages") {
+            <div class="flex flex-wrap gap-2 select-none my-2">
+                @for (item of items; track $index) {
+                    <div class="shadow-sm text-gray-700/[0.8] font-thin text-sm hover:shadow-md border-2 border-gray-400/[0.1] px-2 py-1 rounded-full bg-slate-900/[0.1]">{{tagName}}</div>
+                }
+            </div>
+        }
+    }
+    
 </div>
