@@ -1,29 +1,30 @@
 <div class="relative flex flex-col w-full">
-
-    <div class="flex gap-5 my-2 md:my-6">
-        <img src="" alt="" class="h-12 w-12 rounded-3xl border-2 border-gray-700">
-        <div class="flex justify-between w-full">
-            <a href="#" class="flex items-center font-medium text-xl">Mohit Kumar</a>
-            <a href="#" class="flex items-center text-black/[0.7] text-xs font-content">follow</a>
-        </div>
-        
-    </div>
-    <div class="relative text-3xl font-semibold mb-1">
+    <div [routerLink]="['/']" class="fixed right-10 bottom-10 bg-black/[0.1] backdrop-blur-lg border-2 border-white/[0.2] rounded-full p-6 py-1 z-100 cursor-pointer text-white/[0.5] shadow-lg shadow-black/[0.1] text-lg"><</div>
+    <div class="relative text-3xl font-medium mb-3 text-black/[0.7]">
         The best Website design practices
-        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="favorite" class="absolute right-0 text-gray-500 hover:text-gray-950 cursor-pointer"></mat-icon>
     </div>
-    <div class="text-sm">Learn how to design user-friendly websites that converts and give unforgettable experience.</div>
-    <hr class="h-px my-6 bg-gray-200 border-0 dark:bg-gray-700">
+    <div class="flex gap-5 my-2 mb-4">
+        <img src="" alt="" class="h-10 w-10 rounded-3xl border-[1px] border-gray-700">
+        <div class="flex justify-between w-full">
+            <a href="#" class="flex items-center font-medium text-base text-black/[0.8]">Mohit Kumar</a>
+            <div class="flex flex-row gap-2 items-center">
+                <div class="border-2 h-10 w-10 pt-[1px] pl-[1px] bg-white rounded-full flex items-center justify-center"><mat-icon class="text-gray-500/[0.2] hover:text-gray-950/[0.3] cursor-pointer" aria-hidden="false" aria-label="Example home icon" fontIcon="favorite"></mat-icon></div>
+                <a href="#" class="border-2 py-2 px-4 rounded-full bg-slate-950 hover:bg-slate-950/[0.5] flex items-center text-white/[0.9] text-sm font-content">Get In Touch</a>
+            </div>
+            
+        </div>
+    </div>
+
     <div class="relative bg-gradient-to-tr from-indigo-500 to-indigo-900 rounded-2xl mb-4 shadow-sm hover:saturate-200 h-64 transition-all">
         <img src="" alt="">
         <div class="absolute bottom-3 right-4 text-sm text-gray-300">{{type | uppercase}}</div>
     </div>
 
     <!-- START HERE -->
-     <fieldset class="relative border-2 border-black rounded-lg my-2 overflow-hidden ">
+     <fieldset class="relative border-[1px] border-black rounded-lg my-2 overflow-hidden ">
         <legend class="mx-4 p-2 text-black/[0.5]">
-            > {{codeLanguage}}
-            <span class="absolute right-4 top-0 bg-gray-50 border-2 border-black p-1 rounded-md cursor-pointer material-symbols-outlined">content_copy</span>
+            <div class="text-sm bg-black/[0.1] text-white px-2 py-1 rounded-full">{{codeLanguage}}</div>
+            <span class="absolute right-4 top-3 bg-gray-50 border-[1px] border-black  rounded-md cursor-pointer p-2"></span>
         </legend>
         <pre class="px-4 pb-3 flex flex-wrap"><code >{{code}}</code></pre>
      </fieldset>

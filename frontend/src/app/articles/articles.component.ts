@@ -1,13 +1,13 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
-
+import { RouterLink } from '@angular/router';
 import { ButtonModule } from 'primeng/button'
 import { FieldsetModule } from 'primeng/fieldset';
 
 @Component({
   selector: 'app-articles',
-  imports: [MatIconModule, CommonModule, ButtonModule,FieldsetModule],
+  imports: [MatIconModule, CommonModule, ButtonModule,FieldsetModule,RouterLink],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './articles.component.html',
   styleUrl: './articles.component.css'

@@ -1,39 +1,45 @@
-<input type="text" name="" placeholder="Search" class="w-full placeholder:text-black/[0.5] bg-gray-400/[0.1] active:bg-white box-border hover:shadow-xl rounded-lg h-12 pl-4 transition-shadow my-3 md:my-9">
-<div class="md:grid md:grid-cols-2 flex flex-wrap gap-10 pt-4 w-full mb-4 justify-center">
-    <div [routerLink]="['/article']" class="flex flex-col hover:text-gray-800/[0.8] text-black/[0.8] cursor-pointer w-full">
-        <div class="bg-gradient-to-tr from-indigo-500 to-indigo-900 h-52 rounded-2xl mb-4 shadow-sm hover:saturate-200 hover:scale-95 transition-all">
-            <img src="" alt="">
-        </div>
-        <div class="text-[10px] font-medium ">{{type | uppercase}}</div>
-        <div class="text-xl font-[600] font-content">The best Website design practices</div>
-        <div class="text-[13px]">Learn how to design user-friendly websites that converts and give unforgettable experience.</div>
-        <div class="flex justify-end gap-5 mt-5">
-            <div class="flex gap-1">
-                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="remove_red_eye"></mat-icon>
-                {{numView}}
-            </div>
-            <div class="flex gap-1">
-                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="favorite"></mat-icon>
-                {{numLiked}}
-            </div>
-        </div>
+<div class="flex justify-between font-heading select-none">
+    <div [routerLink]="['/']" class="text-gray-900/[0.6] text-4xl font-bold cursor-pointer hover:text-black/[0.5]">Blog</div>
+    <div class="flex gap-10 self-end">
+      <div class="text-gray-500 self-center hover:text-gray-900">Mohit's Blogs</div>
+      <!-- <mat-slide-toggle [disabled]="disabled" class="text-red-500"></mat-slide-toggle> -->
     </div>
-    <div [routerLink]="['/article']" class="flex flex-col hover:text-gray-800/[0.8] text-black/[0.8] cursor-pointer w-full">
-        <div class="bg-gradient-to-tr from-indigo-500 to-indigo-900 h-52 rounded-2xl mb-4 shadow-sm hover:saturate-200 hover:scale-95 transition-all">
-            <img src="" alt="">
-        </div>
-        <div class="text-[10px] font-medium ">{{type | uppercase}}</div>
-        <div class="text-xl font-[600] font-content">The best Website design practices</div>
-        <div class="text-[13px]">Learn how to design user-friendly websites that converts and give unforgettable experience.</div>
-        <div class="flex justify-end gap-5 mt-5">
-            <div class="flex gap-1">
-                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="remove_red_eye"></mat-icon>
-                {{numView}}
+</div>
+<input type="text" name="" placeholder="Search" class="w-full placeholder:text-black/[0.5] bg-gray-400/[0.1] active:bg-white box-border hover:shadow-xl rounded-lg h-12 pl-4 transition-shadow my-3">
+<hr class="text-black/[0.8]">
+<div class="md:grid md:grid-cols-2 flex flex-wrap gap-4 gap-y-10 pt-4 w-full mb-4 justify-center">
+    @for (item of items; track $index) {
+        <div [routerLink]="['/article']" class="md:w-[350px] flex flex-col hover:text-gray-800/[0.8] text-black/[0.8] cursor-pointer w-full">
+            <div class="relative bg-gradient-to-tr h-[300px] md:h-[300px] from-indigo-500 to-indigo-900 rounded-2xl mb-2 shadow-sm hover:saturate-200 hover:scale-[0.98] transition-all">
+                <img src="" alt="" style="color: #00000031;">
             </div>
-            <div class="flex gap-1">
-                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="favorite"></mat-icon>
-                {{numLiked}}
+            <div class="font-medium flex justify-between ">
+                <div class="text-white bg-slate-600/[0.2] text-[12px] flex flex-col items-center px-2 py-1 rounded-md">{{type | uppercase}}</div>
+                <div class="flex gap-2 text-xs text-black/[0.5] items-center">
+                    <div class="flex gap-1">
+                        <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                            width="15px" height="15px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+                            <path fill="#00000031" d="M47.977,5.99c-4.416,0-8.414,1.792-11.308,4.686l-4.685,4.654l-4.686-4.654
+                                C24.406,7.782,20.408,5.99,15.992,5.99C7.161,5.99,0,13.15,0,21.982c0,4.416,2.85,8.539,5.747,11.432l23.41,23.414
+                                c1.562,1.562,4.092,1.562,5.653,0l23.349-23.352c2.896-2.893,5.81-7.078,5.81-11.494C63.969,13.15,56.808,5.99,47.977,5.99z"/>
+                        </svg>
+                        {{numLiked}}
+                    </div>
+                    <div class="flex gap-1">
+                        <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                            width="17px" height="17px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+                        <path fill="#00000031" d="M63.714,30.516C63.347,29.594,54.448,8,31.999,8S0.651,29.594,0.284,30.516
+                            c-0.379,0.953-0.379,2.016,0,2.969C0.651,34.406,9.55,56,31.999,56s31.348-21.594,31.715-22.516
+                            C64.093,32.531,64.093,31.469,63.714,30.516z M31.999,40c-4.418,0-8-3.582-8-8s3.582-8,8-8s8,3.582,8,8S36.417,40,31.999,40z"/>
+                        </svg>
+                        {{numView}}
+                    </div>
+                </div>
             </div>
+            <div class="text-xl font-[600] font-content text-black/[0.6] hover:text-black/[0.8]">The best Website design practices</div>
+            
         </div>
-    </div>
+    }
+    
+    
 </div>
