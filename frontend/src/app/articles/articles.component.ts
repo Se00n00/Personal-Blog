@@ -14,6 +14,21 @@ import { FieldsetModule } from 'primeng/fieldset';
 })
 
 export class ArticlesComponent {
+  like(){}
+  comment_icon = 'comment';
+  showComments:boolean = false;
+  comment(){
+    if(this.comment_icon === 'close'){
+      this.comment_icon  = 'comment'
+      this.showComments = false
+    }
+    else{
+      this.showComments = true
+      this.comment_icon= 'close'
+    }
+  }
+  upCommentCrousal(){}
+  downCommentCrousal(){}
 
   type = "web Design"
   numView = 100
@@ -33,4 +48,5 @@ export class ArticlesComponent {
 
   codeLanguage="typescript"
   code = "#include stdio.h int main() printf()"
+  comments = [1,1]
 }
