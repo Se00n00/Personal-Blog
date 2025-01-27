@@ -1,0 +1,13 @@
+h1 {
+  margin: -10px 0 -30px;
+  font-size: calc(17vw + 40px);
+  opacity: .8;
+  letter-spacing: -17px;
+}
+
+p {
+  opacity: .8;
+  font-size: 20px;
+  margin: 8px 0 38px 0;
+  font-weight: lighter;
+}

@@ -1,8 +1,8 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Signal, WritableSignal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
-
+import { signal } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -12,6 +12,14 @@ import { RouterLink } from '@angular/router';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  logined: WritableSignal<boolean> = signal(false)
+  madelogin(){
+    this.logined.set(true)
+  }
+  madelogout(){
+    this.logined.set(false)
+  }
+  
   type = "web Design"
   numView = 100
   numComments = 1
