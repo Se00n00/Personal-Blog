@@ -19,17 +19,25 @@
         <div class="flex-1">
             <div class="relative bg-gradient-to-tr from-indigo-500 to-indigo-900 rounded-2xl mb-4 shadow-sm hover:saturate-200 h-64 transition-all">
                 <img src="" alt="">
-                <div class="absolute bottom-3 right-4 text-sm text-gray-300">{{type | uppercase}}</div>
+                <div class="absolute right-0 shadow-[0px_0px_0px_11px] shadow-white text-black/[0.6] text-[10px] flex flex-col items-center px-4 py-2 rounded-full bg-gray-400/[0.6]">
+                    <div class="absolute h-12 w-12 rounded-full -bottom-[58px] right-0 shadow-[15px_-15px_0px_-5px] shadow-white bg-transparent"></div>
+                    <div class="absolute h-12 w-12 rounded-full -left-[58px] top-0 shadow-[15px_-20px_0px_-6px] shadow-white bg-transparent"></div>
+                    {{type | uppercase}}
+                </div>
+                <!-- <div class="absolute bottom-3 right-4 text-sm text-gray-300">{{type | uppercase}}</div> -->
             </div>
 
             <!-- START HERE -->
-            <fieldset class="relative border-[1px] border-black rounded-lg my-2 overflow-hidden ">
-                <legend class="mx-4 p-2 text-black/[0.5]">
-                    <div class="text-sm bg-black/[0.1] text-white px-2 py-1 rounded-full">{{codeLanguage}}</div>
-                    <span class="absolute right-4 top-3 bg-gray-50 border-[1px] border-black  rounded-md cursor-pointer p-2"></span>
-                </legend>
-                <pre class="px-4 pb-3 flex flex-wrap"><code >{{code}}</code></pre>
-            </fieldset>
+             <div class="flex flex-col bg-slate-500 rounded-xl p-2 box-border">
+                <div class="flex mb-2 justify-between items-center px-2">
+                    <div class="text-sm bg-black/[0.1] text-white px-2 rounded-full">{{codeLanguage}}</div>
+                    <div class="text-sm text-white">copy</div>
+                </div>
+                <div class="flex-1 bg-slate-200 rounded-lg text-sm p-2 font-content text-gray-700">
+                    #include "stdio.h"
+                </div>
+             </div>
+
             <div class="flex flex-wrap gap-2 select-none my-2">
                 @for (item of items; track $index) {
                     <div class="shadow-sm text-gray-700/[0.8] font-thin text-sm hover:shadow-md border-2 border-gray-400/[0.1] px-2 py-1 rounded-full bg-slate-900/[0.1]">{{tagName}}</div>
@@ -42,10 +50,15 @@
             </ul>
             <p class="italic font-thin my-2">{{quoteText}} lorem100</p>
             <p class="my-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis enim cupiditate dicta aut. Praesentium, obcaecati illum. Odio alias delectus, perferendis suscipit tenetur impedit ut unde! Sequi obcaecati fugit blanditiis veritatis maiores? Vel, accusantium hic. Numquam corporis velit voluptates illum similique vero ipsam optio, animi eaque perspiciatis, eos repellat amet obcaecati ad aperiam praesentium sed officiis dicta fugit officia unde itaque assumenda fuga nesciunt. Architecto, asperiores quibusdam ratione obcaecati eos sint, provident repudiandae nostrum similique quis libero? Possimus animi ipsam repudiandae labore impedit nihil placeat ducimus, esse voluptatibus temporibus accusantium non. Ea iure maxime a aut culpa et vel earum ab?</p>
-            <div class="object-contain flex flex-col gap-1 my-2">
-                <img src= "{{imageSrc}}" alt="an image" class="flex-1 self-center rounded-md shadow-sm hover:saturate-150">
-                <p class="flex-1 self-center text-black/[0.7]">{{ImageTitle}}</p>
+            
+            
+            <div class="flex justify-center">
+                <div class="object-contain flex flex-col gap-1 my-2 border-2 rounded-xl border-black/[0.1] p-2 w-max bg-gray-500/[0.2]">
+                    <img src= "{{imageSrc}}" alt="an image" class="flex-1 self-center rounded-xl shadow-md shadow-black/[0.5] hover:saturate-150">
+                    <p class="flex-1 self-center text-sm text-black/[0.5]">{{ImageTitle}}</p>
+                </div>
             </div>
+            
             <!-- END -->
 
 
@@ -70,13 +83,15 @@
                     <p class="my-2 text-xl font-medium">{{subHeadingText}}</p>
                 }
                 @case ("code") {
-                    <fieldset class="relative border-2 border-black rounded-lg my-2 overflow-hidden ">
-                        <legend class="mx-4 p-2 text-black/[0.5]">
-                            > {{codeLanguage}}
-                            <span class="absolute right-4 top-0 bg-gray-50 border-2 border-black p-1 rounded-md cursor-pointer material-symbols-outlined">content_copy</span>
-                        </legend>
-                        <pre class="px-4 pb-3 flex flex-wrap"><code >{{code}}</code></pre>
-                    </fieldset>
+                    <div class="flex flex-col bg-slate-500 rounded-xl p-2 box-border">
+                        <div class="flex mb-2 justify-between items-center px-2">
+                            <div class="text-sm bg-black/[0.1] text-white px-2 rounded-full">{{codeLanguage}}</div>
+                            <div class="text-sm text-white">copy</div>
+                        </div>
+                        <div class="flex-1 bg-slate-200 rounded-lg text-sm p-2 font-content text-gray-700">
+                            #include "stdio.h"
+                        </div>
+                     </div>        
                 }
                 @case ("list") {
                     <ul class="list-disc flex flex-col pl-10 my-2">
@@ -96,58 +111,62 @@
     </div>
     <!-- ARTICLE ENDS HERE -->
 
-    <div class="flex gap-x-2 justify-center mt-10">
+    <div class="flex gap-x-2 justify-center mt-10 scale-75">
         
-        <div class="border-[1px] h-10 w-10 pt-[1px] pl-[1px] bg-white rounded-full flex items-center justify-center" (click)="like()"><mat-icon class="text-gray-500/[0.2] hover:text-gray-950/[0.3] cursor-pointer" aria-hidden="false" aria-label="Example home icon" fontIcon="favorite"></mat-icon></div>
-        <div class="border-[1px] h-10 w-10 pt-[1px] pl-[1px] bg-white rounded-full flex items-center justify-center" (click)="like()"><mat-icon class="text-gray-500/[0.2] hover:text-gray-950/[0.3] cursor-pointer" aria-hidden="false" aria-label="Example home icon" fontIcon="share"></mat-icon></div>
-        <div class="border-[1px] h-10 w-10 pt-[1px] pl-[1px] bg-white rounded-full flex items-center justify-center" (click)="comment()"><mat-icon class="text-gray-500/[0.2] hover:text-gray-950/[0.3] cursor-pointer" aria-hidden="false" aria-label="Example home icon" fontIcon={{comment_icon}}></mat-icon></div>
+        <div class="border-[1px] h-10 w-10 pt-[2px] pl-[0px] bg-white rounded-full flex items-center justify-center" (click)="like()"><mat-icon class="text-gray-500/[0.2] hover:text-gray-950/[0.3] cursor-pointer" aria-hidden="false" aria-label="Example home icon" fontIcon="favorite"></mat-icon></div>
+        <div class="border-[1px] h-10 w-10 pt-[2px] pl-[0px] bg-white rounded-full flex items-center justify-center" (click)="like()"><mat-icon class="text-gray-500/[0.2] hover:text-gray-950/[0.3] cursor-pointer" aria-hidden="false" aria-label="Example home icon" fontIcon="share"></mat-icon></div>
+        <div class="border-[1px] h-10 w-10 pt-[2px] pl-[0px] bg-white rounded-full flex items-center justify-center" (click)="comment()"><mat-icon class="text-gray-500/[0.2] hover:text-gray-950/[0.3] cursor-pointer" aria-hidden="false" aria-label="Example home icon" fontIcon={{comment_icon}}></mat-icon></div>
     </div>
+
     <!-- ARTICLES COMMENTS STARTS HERE -->
-    <div class="flex flex-col justify-between bg-gray-200 dark:bg-gray-600 rounded-lg p-4 my-4" *ngIf="showComments">
-        <div>
-            <p class="text-slate-800/[0.5] mx-2 dark:text-white font-medium text-lg">Feedback</p>
-            <div class="flex">
-                <div class="flex-1 flex flex-col items-center gap-2.5 p-5 max-h-[435px]">
-                    <div class="flex flex-col w-full leading-1.5 p-4 border-gray-200 bg-blue-500 rounded-l-xl rounded-br-xl dark:bg-blue-900">
-                        <div class="flex items-center space-x-2 rtl:space-x-reverse">
-                           <span class="text-sm font-medium text-gray-100 dark:text-white">Author</span>
-                           <span class="text-sm font-normal text-gray-300 dark:text-gray-400">11:46</span>
-                        </div>
-                        <p class="text-sm font-normal py-2.5 text-gray-200 dark:text-white">Check out this open-source UI component library based on Tailwind CSS:</p>
-                        <p class="text-sm font-normal pb-2.5 text-gray-200 dark:text-white"><a href="https://github.com/themesberg/flowbite" class="text-blue-700 dark:text-blue-500 underline hover:no-underline font-medium break-all">https://github.com/themesberg/flowbite</a></p>
-                    </div>
-                    @for (item of comments; track $index) {
-                        <div class="flex flex-col w-full leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl dark:bg-gray-700">
+    <div class="p-2 bg-gray-200 rounded-lg" *ngIf="showComments">
+        <div class="flex flex-col justify-between bg-gray-200 dark:bg-gray-600 rounded-lg p-4">
+            <div>
+                <p class="text-slate-800/[0.5] mx-2 dark:text-white font-medium text-lg">Feedback</p>
+                <div class="flex">
+                    <div class="flex-1 flex flex-col items-center gap-2.5 p-5 max-h-[435px]">
+                        <div class="flex flex-col w-full leading-1.5 p-4 border-gray-200 bg-blue-500 rounded-l-xl rounded-br-xl dark:bg-blue-900">
                             <div class="flex items-center space-x-2 rtl:space-x-reverse">
-                               <span class="text-sm font-medium text-gray-900 dark:text-white">Bonnie Green</span>
-                               <span class="text-sm font-normal text-gray-500 dark:text-gray-400">11:46</span>
+                               <span class="text-sm font-medium text-gray-100 dark:text-white">Author</span>
+                               <span class="text-sm font-normal text-gray-300 dark:text-gray-400">11:46</span>
                             </div>
-                            <p class="text-sm font-normal py-2.5 text-gray-900 dark:text-white">Check out this open-source UI component library based on Tailwind CSS:</p>
-                            <p class="text-sm font-normal pb-2.5 text-gray-900 dark:text-white"><a href="https://github.com/themesberg/flowbite" class="text-blue-700 dark:text-blue-500 underline hover:no-underline font-medium break-all">https://github.com/themesberg/flowbite</a></p>
-                        </div>  
-                    }
-                </div>
-                <div class="flex flex-col gap-2">
-                    <div class="w-4 h-4 bg-slate-800 rounded-full border-2 border-white/35 hover:bg-slate-500 cursor-pointer" (click)="upCommentCrousal()"></div>
-                    <div class="w-4 h-4 bg-slate-800 rounded-full border-2 border-white/35 hover:bg-slate-500 cursor-pointer" (click)="downCommentCrousal()"></div>
+                            <p class="text-sm font-normal py-2.5 text-gray-200 dark:text-white">Check out this open-source UI component library based on Tailwind CSS:</p>
+                            <p class="text-sm font-normal pb-2.5 text-gray-200 dark:text-white"><a href="https://github.com/themesberg/flowbite" class="text-blue-700 dark:text-blue-500 underline hover:no-underline font-medium break-all">https://github.com/themesberg/flowbite</a></p>
+                        </div>
+                        @for (item of comments; track $index) {
+                            <div class="flex flex-col w-full leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl dark:bg-gray-700">
+                                <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                                   <span class="text-sm font-medium text-gray-900 dark:text-white">Bonnie Green</span>
+                                   <span class="text-sm font-normal text-gray-500 dark:text-gray-400">11:46</span>
+                                </div>
+                                <p class="text-sm font-normal py-2.5 text-gray-900 dark:text-white">Check out this open-source UI component library based on Tailwind CSS:</p>
+                                <p class="text-sm font-normal pb-2.5 text-gray-900 dark:text-white"><a href="https://github.com/themesberg/flowbite" class="text-blue-700 dark:text-blue-500 underline hover:no-underline font-medium break-all">https://github.com/themesberg/flowbite</a></p>
+                            </div>  
+                        }
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <div class="w-4 h-4 bg-slate-800 rounded-full border-2 border-white/35 hover:bg-slate-500 cursor-pointer" (click)="upCommentCrousal()"></div>
+                        <div class="w-4 h-4 bg-slate-800 rounded-full border-2 border-white/35 hover:bg-slate-500 cursor-pointer" (click)="downCommentCrousal()"></div>
+                    </div>
                 </div>
             </div>
-        </div>
-
-
-        <form>
-            <label for="chat" class="sr-only">Your message</label>
-            <div class="flex items-center justify-between pr-3 py-2 rounded-lg bg-gray-50 dark:bg-gray-700">
     
-                <textarea id="chat" rows="1" class="block mx-2 p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your message..."></textarea>
-                    <button type="submit" class="inline-flex justify-center p-2 text-blue-600 rounded-full cursor-pointer hover:bg-blue-100 dark:text-blue-500 dark:hover:bg-gray-600">
-                    <svg class="w-5 h-5 rotate-90 rtl:-rotate-90" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
-                        <path d="m17.914 18.594-8-18a1 1 0 0 0-1.828 0l-8 18a1 1 0 0 0 1.157 1.376L8 18.281V9a1 1 0 0 1 2 0v9.281l6.758 1.689a1 1 0 0 0 1.156-1.376Z"/>
-                    </svg>
-                    <span class="sr-only">Send message</span>
-                </button>
-            </div>
-        </form>
-    </div>  
+    
+            <form>
+                <label for="chat" class="sr-only">Your message</label>
+                <div class="flex items-center justify-between pr-3 py-2 rounded-lg bg-gray-50 dark:bg-gray-700">
+        
+                    <textarea id="chat" rows="1" class="block mx-2 p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your message..."></textarea>
+                        <button type="submit" class="inline-flex justify-center p-2 text-blue-600 rounded-full cursor-pointer hover:bg-blue-100 dark:text-blue-500 dark:hover:bg-gray-600">
+                        <svg class="w-5 h-5 rotate-90 rtl:-rotate-90" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+                            <path d="m17.914 18.594-8-18a1 1 0 0 0-1.828 0l-8 18a1 1 0 0 0 1.157 1.376L8 18.281V9a1 1 0 0 1 2 0v9.281l6.758 1.689a1 1 0 0 0 1.156-1.376Z"/>
+                        </svg>
+                        <span class="sr-only">Send message</span>
+                    </button>
+                </div>
+            </form>
+        </div>  
+    </div>
+    
     <!-- ARTICLES COMMENTS ENDS HERE -->
 </div>

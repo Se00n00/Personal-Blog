@@ -26,4 +26,5 @@ export class HomeComponent {
   numLiked = 10
 
   items= [1,2,3,4,5]
+  current_Date = new Date()
 }
