@@ -1,10 +1,13 @@
 h1 {
-  margin: -10px 0 -30px;
+  margin: 0;
   font-size: calc(17vw + 40px);
   opacity: .8;
   letter-spacing: -17px;
 }
-
+h2{
+  /* margin-top: ; */
+  font-size:  20px;
+}
 p {
   opacity: .8;
   font-size: 20px;

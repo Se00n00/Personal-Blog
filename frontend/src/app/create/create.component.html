@@ -1,0 +1,139 @@
+<div class="block sm:hidden text-black">
+    <div class="text-center h-screen flex flex-col justify-center items-center">
+        <h1 class="text-5xl">404</h1>
+        <p class="font-light mb-10">We're sorry but creating in small screen is not supported</p>
+        <div class="flex justify-center items-center gap-5">
+          Return to Home Page >
+          <div class="bg-slate-900/[0.4] p-2 rounded-full cursor-pointer stroke-white hover:stroke-white/[0.5]"><a [routerLink]="['/']">
+              <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 16C9.85038 16.6303 10.8846 17 12 17C13.1154 17 14.1496 16.6303 15 16" stroke="inherit" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M22 12.2039V13.725C22 17.6258 22 19.5763 20.8284 20.7881C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.7881C2 19.5763 2 17.6258 2 13.725V12.2039C2 9.91549 2 8.77128 2.5192 7.82274C3.0384 6.87421 3.98695 6.28551 5.88403 5.10813L7.88403 3.86687C9.88939 2.62229 10.8921 2 12 2C13.1079 2 14.1106 2.62229 16.116 3.86687L18.116 5.10812C20.0131 6.28551 20.9616 6.87421 21.4808 7.82274" stroke="inherit" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+          </a></div>
+        </div>
+    </div>
+</div>
+<div class="hidden sm:block">
+    <p class="text-black/[0.6] text-xl mb-5">Create a new Blog Article</p>
+    <div class="flex flex-col gap-4">
+    
+        <!-- ARTICLE HEAD INFORMATION CREATION STARTS HERE:
+            ARTICLE NAME
+            ARTICLE DESCRIPTION
+            ARTICLE LABEL -->
+        <div class="border-2 rounded-xl p-3 flex flex-col gap-3">
+            <p class="text-[#878a8d7e] text-xs font-medium">ARTICLE HEAD INFO</p>
+            <div class="flex flex-col gap-1 ">
+                <label for="title" class="text-black/[0.6] text-sm font-medium">Article Title </label>
+                <input id="name" type="text" placeholder="article title" class="placeholder:text-sm bg-white border-[1px] rounded-lg h-10 px-2">
+            </div>
+            <div class="flex flex-col gap-1">
+                <label for="title" class="text-black/[0.6] text-sm font-medium">Description </label>
+                <input id="name" type="text" placeholder="article description" class="placeholder:text-sm bg-white border-[1px] rounded-lg h-10 px-2">
+            </div>
+            <div class="flex flex-col gap-1">
+                <label for="title" class="text-black/[0.6] text-sm font-medium">Label </label>
+                <input id="name" type="text" placeholder="article label" class="placeholder:text-sm bg-white border-[1px] rounded-lg h-10 px-2">
+            </div>
+            <div class="flex items-center justify-center w-full">
+                <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-gray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+                    <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                        <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+                        </svg>
+                        <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG</p>
+                    </div>
+                    <input id="dropzone-file" type="file" class="hidden" />
+                </label>
+            </div> 
+        </div>
+        <!-- ARTICLE HEAD ENDS HERE -->
+    
+        <!-- ARTICLE MAIN INFORMATION CREATION STARTS HERE -->
+        <div class="border-2 rounded-xl p-3 flex flex-col gap-3">
+            <p class="text-[#878a8d7e] text-xs font-medium">ARTICLE MAIN CONTENT</p>
+            <p class="text-[#878a8d7e] text-xs font-light text-center">choose any of the following</p>
+            <div class="group flex flex-wrap gap-2 text-[#1C2648] text-sm font-medium ">
+                <div class="flex gap-1 bg-white border-[1px] p-1 rounded-xl shadow-sm shadow-black/[0.1] cursor-pointer select-none" #quote (click)=create_quote(quote)>
+                    <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 12H9M16 12H12" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M16 8H15M12 8H8" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M8 16H13" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M3 14V10C3 6.22876 3 4.34315 4.17157 3.17157C5.34315 2 7.22876 2 11 2H13C16.7712 2 18.6569 2 19.8284 3.17157C20.4816 3.82476 20.7706 4.69989 20.8985 6M21 10V14C21 17.7712 21 19.6569 19.8284 20.8284C18.6569 22 16.7712 22 13 22H11C7.22876 22 5.34315 22 4.17157 20.8284C3.51839 20.1752 3.22937 19.3001 3.10149 18" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    quote
+                </div>
+                <div class="flex gap-1 bg-white border-[1px] p-1 rounded-xl shadow-sm shadow-black/[0.1] cursor-pointer select-none" #image (click)=create_image(image)>
+                    <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 12.5001L3.75159 10.9675C4.66286 10.1702 6.03628 10.2159 6.89249 11.0721L11.1822 15.3618C11.8694 16.0491 12.9512 16.1428 13.7464 15.5839L14.0446 15.3744C15.1888 14.5702 16.7369 14.6634 17.7765 15.599L21 18.5001" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M18.562 2.9354L18.9791 2.5183C19.6702 1.82723 20.7906 1.82723 21.4817 2.5183C22.1728 3.20937 22.1728 4.32981 21.4817 5.02087L21.0646 5.43797M18.562 2.9354C18.562 2.9354 18.6142 3.82172 19.3962 4.60378C20.1783 5.38583 21.0646 5.43797 21.0646 5.43797M18.562 2.9354L14.7275 6.76995C14.4677 7.02968 14.3379 7.15954 14.2262 7.30273C14.0945 7.47163 13.9815 7.65439 13.8894 7.84776C13.8112 8.01169 13.7532 8.18591 13.637 8.53437L13.2651 9.65M21.0646 5.43797L17.23 9.27253C16.9703 9.53225 16.8405 9.66211 16.6973 9.7738C16.5284 9.90554 16.3456 10.0185 16.1522 10.1106C15.9883 10.1888 15.8141 10.2468 15.4656 10.363L14.35 10.7349M14.35 10.7349L13.6281 10.9755C13.4567 11.0327 13.2676 10.988 13.1398 10.8602C13.012 10.7324 12.9673 10.5433 13.0245 10.3719L13.2651 9.65M14.35 10.7349L13.2651 9.65" stroke="#1C274C" stroke-width="1.5"/>
+                        <path d="M22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 10.8717 2 9.87835 2.02008 9M12 2C7.28595 2 4.92893 2 3.46447 3.46447C3.03965 3.88929 2.73806 4.38921 2.52396 5" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    image
+                </div>
+                <div class="flex gap-1 bg-white border-[1px] p-1 rounded-xl shadow-sm shadow-black/[0.1] cursor-pointer select-none" #text (click)=create_text(text)>
+                    <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.25 17C11.25 17.4142 11.5858 17.75 12 17.75C12.4142 17.75 12.75 17.4142 12.75 17H11.25ZM15.25 9.75C15.25 10.1642 15.5858 10.5 16 10.5C16.4142 10.5 16.75 10.1642 16.75 9.75H15.25ZM7.25 9.75C7.25 10.1642 7.58579 10.5 8 10.5C8.41421 10.5 8.75 10.1642 8.75 9.75H7.25ZM15.7071 7.32544L16.2646 6.82371V6.82371L15.7071 7.32544ZM9.5 16.25C9.08579 16.25 8.75 16.5858 8.75 17C8.75 17.4142 9.08579 17.75 9.5 17.75V16.25ZM15 17.75C15.4142 17.75 15.75 17.4142 15.75 17C15.75 16.5858 15.4142 16.25 15 16.25V17.75ZM10 7.75H12V6.25H10V7.75ZM12 7.75H14V6.25H12V7.75ZM12.75 17V7H11.25V17H12.75ZM15.25 9.22222V9.75H16.75V9.22222H15.25ZM7.25 9.22222V9.75H8.75V9.22222H7.25ZM14 7.75C14.4949 7.75 14.7824 7.75196 14.9865 7.78245C15.0783 7.79617 15.121 7.8118 15.1376 7.8194C15.148 7.82415 15.1477 7.82503 15.1496 7.82716L16.2646 6.82371C15.96 6.4853 15.579 6.35432 15.2081 6.29891C14.8676 6.24804 14.4479 6.25 14 6.25V7.75ZM16.75 9.22222C16.75 8.71757 16.7513 8.27109 16.708 7.91294C16.6629 7.54061 16.559 7.15082 16.2646 6.82371L15.1496 7.82716C15.1523 7.83015 15.1609 7.83939 15.1731 7.87221C15.1873 7.91048 15.2048 7.97725 15.2188 8.09313C15.2487 8.34011 15.25 8.67931 15.25 9.22222H16.75ZM10 6.25C9.55208 6.25 9.13244 6.24804 8.79192 6.29891C8.42102 6.35432 8.04 6.4853 7.73542 6.82371L8.85036 7.82716C8.85228 7.82503 8.85204 7.82415 8.86242 7.8194C8.87904 7.8118 8.92168 7.79617 9.01354 7.78245C9.21765 7.75196 9.50511 7.75 10 7.75V6.25ZM8.75 9.22222C8.75 8.67931 8.75129 8.34011 8.78118 8.09313C8.7952 7.97725 8.81273 7.91048 8.8269 7.87221C8.83905 7.83939 8.84767 7.83015 8.85036 7.82716L7.73542 6.82371C7.44103 7.15082 7.3371 7.54061 7.29204 7.91294C7.24871 8.27109 7.25 8.71757 7.25 9.22222H8.75ZM9.5 17.75H15V16.25H9.5V17.75Z" fill="#1C274C"/>
+                        <path d="M22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C21.5093 4.43821 21.8356 5.80655 21.9449 8" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    text
+                </div>
+                <div class="flex gap-1 bg-white border-[1px] p-1 rounded-xl shadow-sm shadow-black/[0.1] cursor-pointer select-none" #heading (click)=create_heading(heading)>
+                    <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 7.52174C8 6.68131 8.68131 6 9.52174 6H12C13.6569 6 15 7.34315 15 9C15 10.6569 13.6569 12 12 12H8V7.52174Z" stroke="#1C274C" stroke-width="1.5"/>
+                        <path d="M8 12H13C14.6569 12 16 13.3431 16 15C16 16.6569 14.6569 18 13 18H9.17647C8.52672 18 8 17.4733 8 16.8235V12Z" stroke="#1C274C" stroke-width="1.5"/>
+                        <path d="M22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C21.5093 4.43821 21.8356 5.80655 21.9449 8" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    heading
+                </div>
+                <div class="flex gap-1 bg-white border-[1px] p-1 rounded-xl shadow-sm shadow-black/[0.1] cursor-pointer select-none" #sub_heading (click)=create_sub_heading(sub_heading)>
+                    <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.25 9.22222C15.25 9.63644 15.5858 9.97222 16 9.97222C16.4142 9.97222 16.75 9.63644 16.75 9.22222H15.25ZM7.25 9.22222C7.25 9.63644 7.58579 9.97222 8 9.97222C8.41421 9.97222 8.75 9.63644 8.75 9.22222H7.25ZM11.25 9.5C11.25 9.91421 11.5858 10.25 12 10.25C12.4142 10.25 12.75 9.91421 12.75 9.5H11.25ZM11.25 17C11.25 17.4142 11.5858 17.75 12 17.75C12.4142 17.75 12.75 17.4142 12.75 17H11.25ZM12.75 14.5C12.75 14.0858 12.4142 13.75 12 13.75C11.5858 13.75 11.25 14.0858 11.25 14.5H12.75ZM15.7071 7.32544L15.1496 7.82716L15.1496 7.82716L15.7071 7.32544ZM9.5 16.25C9.08579 16.25 8.75 16.5858 8.75 17C8.75 17.4142 9.08579 17.75 9.5 17.75V16.25ZM14.5 17.75C14.9142 17.75 15.25 17.4142 15.25 17C15.25 16.5858 14.9142 16.25 14.5 16.25V17.75ZM8 11.25C7.58579 11.25 7.25 11.5858 7.25 12C7.25 12.4142 7.58579 12.75 8 12.75V11.25ZM16 12.75C16.4142 12.75 16.75 12.4142 16.75 12C16.75 11.5858 16.4142 11.25 16 11.25V12.75ZM10 7.75H12V6.25H10V7.75ZM12 7.75H14V6.25H12V7.75ZM12.75 9.5V7H11.25V9.5H12.75ZM12.75 17V14.5H11.25V17H12.75ZM14 7.75C14.4949 7.75 14.7824 7.75196 14.9865 7.78245C15.0783 7.79617 15.121 7.8118 15.1376 7.8194C15.148 7.82415 15.1477 7.82503 15.1496 7.82716L16.2646 6.82371C15.96 6.4853 15.579 6.35432 15.2081 6.29891C14.8676 6.24804 14.4479 6.25 14 6.25V7.75ZM16.75 9.22222C16.75 8.71757 16.7513 8.27109 16.708 7.91294C16.6629 7.54061 16.559 7.15082 16.2646 6.82371L15.1496 7.82716C15.1523 7.83015 15.1609 7.83939 15.1731 7.87221C15.1873 7.91048 15.2048 7.97725 15.2188 8.09313C15.2487 8.34011 15.25 8.67931 15.25 9.22222H16.75ZM10 6.25C9.55208 6.25 9.13244 6.24804 8.79192 6.29891C8.42102 6.35432 8.04 6.4853 7.73542 6.82371L8.85036 7.82716C8.85228 7.82503 8.85204 7.82415 8.86242 7.8194C8.87904 7.8118 8.92168 7.79617 9.01354 7.78245C9.21765 7.75196 9.50511 7.75 10 7.75V6.25ZM8.75 9.22222C8.75 8.67931 8.75129 8.34011 8.78118 8.09313C8.7952 7.97725 8.81273 7.91048 8.8269 7.87221C8.83905 7.83939 8.84767 7.83015 8.85036 7.82716L7.73542 6.82371C7.44103 7.15082 7.3371 7.54061 7.29204 7.91294C7.24871 8.27109 7.25 8.71757 7.25 9.22222H8.75ZM9.5 17.75H14.5V16.25H9.5V17.75ZM8 12.75H16V11.25H8V12.75Z" fill="#1C274C"/>
+                        <path d="M22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C21.5093 4.43821 21.8356 5.80655 21.9449 8" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    sub-heading
+                </div>
+                <div class="flex gap-1 bg-white border-[1px] p-1 rounded-xl shadow-sm shadow-black/[0.1] cursor-pointer select-none" #code (click)=create_code(code)>
+                    <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.5 9L15.6716 9.17157C17.0049 10.5049 17.6716 11.1716 17.6716 12C17.6716 12.8284 17.0049 13.4951 15.6716 14.8284L15.5 15" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M13.2942 7.17041L12.0001 12L10.706 16.8297" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M8.49994 9L8.32837 9.17157C6.99504 10.5049 6.32837 11.1716 6.32837 12C6.32837 12.8284 6.99504 13.4951 8.32837 14.8284L8.49994 15" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C21.5093 4.43821 21.8356 5.80655 21.9449 8" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    code
+                </div>
+                <div class="flex gap-1 bg-white border-[1px] p-1 rounded-xl shadow-sm shadow-black/[0.1] cursor-pointer select-none" #code_text (click)=create_code_text(code_text)>
+                    <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 11V13C2 16.7712 2 18.6569 3.17157 19.8284C4.34315 21 6.22876 21 10 21H14C17.7712 21 19.6569 21 20.8284 19.8284C22 18.6569 22 16.7712 22 13V11C22 7.22876 22 5.34315 20.8284 4.17157C19.6569 3 17.7712 3 14 3H10C6.22876 3 4.34315 3 3.17157 4.17157C2.51839 4.82475 2.22937 5.69989 2.10149 7" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M15 3L15 13M15 17L15 21" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M6 14L5 15L6 16M10.5 16L11.5 17L10.5 18M9 14L7.5 18" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    code_text
+                </div>
+                <div class="flex gap-1 bg-white border-[1px] p-1 rounded-xl shadow-sm shadow-black/[0.1] cursor-pointer select-none" #list (click)=create_list(list)>
+                    <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.5 11L17 11" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M7 11H7.5" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M7 7.5H7.5" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M7 14.5H7.5" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M17 14.5H16M10.5 14.5H13.5" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M17 7.5H14M10.5 7.5H11.5" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M21 7V6.37006C21 5.17705 21 4.58055 20.842 4.09946C20.5425 3.18719 19.8468 2.47096 18.9606 2.16261C18.4933 2 17.9139 2 16.755 2H7.24502C6.08614 2 5.50671 2 5.03939 2.16261C4.15322 2.47096 3.45748 3.18719 3.15795 4.09946C3 4.58055 3 5.17705 3 6.37006V15M21 11V20.3742C21 21.2324 20.015 21.6878 19.3919 21.1176C19.0258 20.7826 18.4742 20.7826 18.1081 21.1176L17.625 21.5597C16.9834 22.1468 16.0166 22.1468 15.375 21.5597C14.7334 20.9726 13.7666 20.9726 13.125 21.5597C12.4834 22.1468 11.5166 22.1468 10.875 21.5597C10.2334 20.9726 9.26659 20.9726 8.625 21.5597C7.98341 22.1468 7.01659 22.1468 6.375 21.5597L5.8919 21.1176C5.52583 20.7826 4.97417 20.7826 4.6081 21.1176C3.985 21.6878 3 21.2324 3 20.3742V19" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    list
+                </div>
+                <div class="flex gap-1 bg-white border-[1px] p-1 rounded-xl shadow-sm shadow-black/[0.1] cursor-pointer select-none" #tags (click)=create_tags(tags)>
+                    <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.1369 4.72848C14.5914 3.18295 13.8186 2.41018 12.816 2.12264C11.8134 1.83509 10.7485 2.08083 8.61875 2.57231L7.39057 2.85574C5.59881 3.26922 4.70292 3.47597 4.08944 4.08944C3.47597 4.70292 3.26922 5.59881 2.85574 7.39057L2.57231 8.61875C2.08083 10.7485 1.83509 11.8134 2.12264 12.816C2.41018 13.8186 3.18295 14.5914 4.72848 16.1369L6.55812 17.9665C9.24711 20.6555 10.5916 22 12.2623 22C13.933 22 15.2775 20.6555 17.9665 17.9665C20.6555 15.2775 22 13.933 22 12.2623C22 10.9198 21.1319 9.788 19.3957 8" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M8.60693 10.8789C9.7115 10.8789 10.6069 9.98348 10.6069 8.87891C10.6069 7.77434 9.7115 6.87891 8.60693 6.87891C7.50236 6.87891 6.60693 7.77434 6.60693 8.87891" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M11.5416 18.5001L12.5416 17.5001M18.5206 11.5209L14.9999 15.0417" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    tags
+                </div>
+            </div>
+        </div>
+        <!-- ARTICLE MAIN INFORMATION CREATION ENDS HERE -->
+    </div>
+    
+</div>
