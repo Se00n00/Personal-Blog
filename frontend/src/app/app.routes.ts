@@ -10,7 +10,7 @@ import { CreateComponent } from './create/create.component';
 export const routes: Routes = [
     
     {path:"",title: 'articles', component: HomeComponent},
-    {path:"article",title: 'article', component:ArticlesComponent},
+    {path:"article/:id",title: 'article', component:ArticlesComponent},
     {path:"login",title: 'author login',component:LoginpageComponent},
     {path:"exit",title: 'logged out',component:ExitpageComponent},
     {path:"create",title: 'create a new article', component:CreateComponent},

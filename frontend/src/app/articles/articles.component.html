@@ -2,12 +2,12 @@
     <div [routerLink]="['/']" class="fixed right-10 bottom-10 bg-black/[0.1] backdrop-blur-lg border-2 border-white/[0.2] rounded-full p-6 py-1 z-100 cursor-pointer text-white/[0.5] shadow-lg shadow-black/[0.1] text-lg"><</div>
     
     <div class="flex gap-5 my-2 mb-10">
-        <img src="" alt="" class="h-10 w-10 rounded-3xl border-[1px] border-gray-700">
+        <img src="" alt="" class="h-10 w-10 rounded-full border-[1px] border-gray-700">
         <div class="flex justify-between w-full">
-            <a href="#" class="flex items-center font-medium text-sm text-black/[0.8]">Mohit</a>
+            <a href="https://www.linkedin.com/in/mohit-kumar-055126248/" class="flex items-center font-medium text-sm text-black/[0.8]">Mohit</a>
             <div class="flex flex-row gap-2 items-center">
                 <div class="border-[1px] h-10 w-10 pt-[1px] pl-[1px] bg-white rounded-full flex items-center justify-center" (click)="like()"><mat-icon class="text-gray-500/[0.2] hover:text-gray-950/[0.3] cursor-pointer" aria-hidden="false" aria-label="Example home icon" fontIcon="favorite"></mat-icon></div>
-                <a href="#" class="border-2 py-2 px-4 rounded-full bg-slate-950 hover:bg-slate-950/[0.5] flex items-center text-white/[0.9] text-sm font-content">Get In Touch</a>
+                <a href="mailto:bluesky5april2021@gmail.com" class="border-2 py-2 px-4 rounded-full bg-slate-950 hover:bg-slate-950/[0.5] flex items-center text-white/[0.9] text-sm font-content">Get In Touch</a>
             </div>
             
         </div>
@@ -17,15 +17,15 @@
     <!-- ARTICLE STARTS HERE -->
     <div class="flex">
         <div class="w-full ">
-            <div class="relative bg-gradient-to-tr from-indigo-500 to-indigo-900 rounded-2xl mb-4 shadow-sm hover:saturate-200 h-[75vh] md:h-[78vh] transition-all">
-                <img src="" alt="">
+            <div class="overflow-hidden relative bg-gradient-to-tr from-indigo-500 to-indigo-900 rounded-2xl mb-4 shadow-sm hover:saturate-[1.18] h-[75vh] md:h-[78vh] transition-all">
+                <img [src]="article.meta.image" class="absolute w-full h-full object-cover" alt="">
                 
                 <div class="absolute h-full flex flex-col justify-end p-5 md:p-10 gap-1">
                     <div class="text-white/[0.6] text-[15px] font-medium">
-                        {{type | uppercase}}
+                        {{article.meta.category | uppercase}}
                     </div>
-                    <div class="text-4xl font-medium text-white">The best Website design practices</div>
-                    <div class="text-[14px] text-white hidden md:block">The best Website design practices Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, blanditiis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, hic? Quos rem architecto ipsam beatae, minima modi amet voluptatum sint?</div>
+                    <div class="text-4xl font-medium text-white">{{article.meta.title}}</div>
+                    <div class="text-[14px] text-white hidden md:block">{{article.meta.description}}</div>
                 </div>
                 <!-- <div class="absolute bottom-3 right-4 text-sm text-gray-300">{{type | uppercase}}</div> -->
             </div>
@@ -34,7 +34,7 @@
 
             <!-- START HERE -->
 
-             <div class="md:flex flex-wrap gap-2 p-2 my-2 bg-slate-200 rounded-xl">
+             <!-- <div class="md:flex flex-wrap gap-2 p-2 my-2 bg-slate-200 rounded-xl">
                 <div class="flex-1 flex flex-col bg-slate-500 rounded-xl p-2 box-border my-2 md:my-0">
                     <div class="flex mb-2 justify-between items-center px-2">
                         <div class="text-sm bg-black/[0.1] text-white px-2 rounded-full">{{codeLanguage}}</div>
@@ -66,84 +66,101 @@
                     <img src= "{{imageSrc}}" alt="an image" class="flex-1 self-center rounded-xl shadow-md shadow-black/[0.5] hover:saturate-150">
                     <p class="flex-1 self-center text-sm text-black/[0.5]">{{ImageTitle}}</p>
                 </div>
-            </div>
-            <div class="flex justify-center">
-                <div class="cursor-pointer w-full flex gap-4 my-2 rounded-xl border-black/[0.1] p-2 bg-gray-500/[0.1] hover:bg-gray-600/[0.2]">
-                    <div class="bg-slate-400 w-max p-2 -rotate-45 rounded-full">
-                        <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M14 7H16C18.7614 7 21 9.23858 21 12C21 14.7614 18.7614 17 16 17H14M10 7H8C5.23858 7 3 9.23858 3 12C3 14.7614 5.23858 17 8 17H10M8 12H16" stroke="#ffffff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <div class="flex flex-col justify-center">
-                        <p class="text-sm text-black/[0.8] font-medium">{{ImageTitle}}</p>
-                        <p class="text-xs text-black/[0.5]">{{ImageTitle}} Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, sapiente.</p>
-                    </div>
-                    <!-- <img src= "{{imageSrc}}" alt="an image" class="flex-1 self-center rounded-xl shadow-md shadow-black/[0.5] hover:saturate-150"> -->
-                    <!-- <p class="flex-1 self-center text-sm text-black/[0.5]">{{ImageTitle}}</p> -->
-                </div>
-            </div>
+            </div> -->
+            
             
             <!-- END -->
 
 
             <!-- START HERE -->
-            @switch (conditioned) {
-                @case ("quote") {
-                    <p class="italic font-thin my-2">{{quoteText}}</p>
-                }
-                @case ("image") {
-                    <div class="object-contain flex flex-col gap-2 my-3">
-                        <img src= "{{imageSrc}}" alt="an image" class="flex-1 self-center rounded-md shadow-sm hover:saturate-150">
-                        <p class="flex-1 self-center text-black/[0.7]">{{ImageTitle}}</p>
-                    </div>
-                }
-                @case ("text") {
-                    <p class="my-2">{{text}}</p>
-                }
-                @case ("heading") {
-                    <p class="my-2 text-3xl font-medium">{{headingText}}</p>
-                }
-                @case ("subHeading") {
-                    <p class="my-2 text-xl font-medium">{{subHeadingText}}</p>
-                }
-                @case ("code") {
-                    <div class="flex flex-col bg-slate-500 rounded-xl p-2 box-border">
-                        <div class="flex mb-2 justify-between items-center px-2">
-                            <div class="text-sm bg-black/[0.1] text-white px-2 rounded-full">{{codeLanguage}}</div>
-                            <div class="text-sm text-white">copy</div>
+            @for (item of article.data; track $index) {
+                @switch (item.datatype) {
+                    @case ("quote") {
+                        <div class="flex flex-wrap justify-center my-5 gap-10">
+                            <p class="italic font-thin text-center">"{{item.value}}"</p>
+                            <p class="italic font-thin text-center">- {{item.quoter}}</p>
                         </div>
-                        <div class="flex-1 bg-slate-200 rounded-lg text-sm p-2 font-content text-gray-700">
-                            #include "stdio.h"
+                       
+                    }
+                    @case ("image") {
+                        <div class="flex justify-center">
+                            <div class="object-contain flex flex-col gap-1 my-2 w-max border-2 rounded-xl border-black/[0.1] p-2 bg-gray-500/[0.2]">
+                                <img src= "{{item.imageSrc}}" alt="an image" class="h-[700px] w-[800px] object-cover flex-1 self-center rounded-xl hover:saturate-[1.15]">
+                                <p class="flex-1 self-center text-sm text-black/[0.5]">{{item.imageTitle | titlecase}}</p>
+                            </div>
                         </div>
-                     </div>        
-                }
-                @case ("code_text") {
-                    <div class="flex flex-wrap gap-2 p-2 my-2 bg-slate-200 rounded-xl">
-                        <div class="flex-1 flex flex-col bg-slate-500 rounded-xl p-2 box-border">
+                    }
+                    @case ("text") {
+                        <p class="my-2 text-base">{{item.value}}</p>
+                    }
+                    @case ("subText") {
+                        <p class="my-2 text-sm">{{item.value}}</p>
+                    }
+                    @case ("heading") {
+                        <p class="my-2 text-3xl font-medium">{{item.value}}</p>
+                    }
+                    @case ("subHeading") {
+                        <p class="my-2 text-xl font-medium">{{item.value}}</p>
+                    }
+                    @case ("code") {
+                        <div class="flex flex-col bg-slate-500 rounded-xl p-2 box-border">
                             <div class="flex mb-2 justify-between items-center px-2">
-                                <div class="text-sm bg-black/[0.1] text-white px-2 rounded-full">{{codeLanguage}}</div>
-                                <div class="text-sm text-white">copy</div>
+                                <div class="text-sm bg-black/[0.1] text-white px-2 rounded-full">{{item.language}}</div>
+                                <div class="text-sm text-white cursor-pointer" >{{copied()}}</div>
                             </div>
-                            <div class="flex-1 bg-slate-200 rounded-lg text-sm p-2 font-content text-gray-700">
-                                #include "stdio.h"
+                            <div class="flex-1 bg-slate-200 rounded-lg text-sm p-2 font-content text-gray-700"><pre><code>{{item.value}}</code>
+                            </pre></div>
+                         </div>        
+                    }
+                    @case ("code_text") {
+                        <div class="flex flex-wrap gap-2 p-2 my-2 bg-slate-200 rounded-xl">
+                            <div class="flex-1 flex flex-col bg-slate-500 rounded-xl p-2 box-border">
+                                <div class="flex mb-2 justify-between items-center px-2">
+                                    <div class="text-sm bg-black/[0.1] text-white px-2 rounded-full">{{item.language}}</div>
+                                    <div class="text-sm text-white cursor-pointer" (click)="copycontent(item.value)">{{copied()}}</div>
+                                </div>
+                                <div class="flex-1 bg-slate-200 rounded-lg text-sm p-2 font-content text-gray-700"><pre><code>{{item.value}}</code>
+                                </pre></div>
                             </div>
+                            <div class="flex-1 font-light p-2 text-sm"> {{item.codeDescription}}</div>
                         </div>
-                        <div class="flex-1 font-light text-sm"> {{listItem}}</div>
-                    </div>
-                }
-                @case ("list") {
-                    <ul class="list-disc flex flex-col pl-10 my-2">
-                        <li class="">{{listItem}}</li>
-                    </ul>
-                }
-                @case ("tages") {
-                    <div class="flex flex-wrap gap-2 select-none my-2">
-                        @for (item of items; track $index) {
-                            <div class="shadow-sm text-gray-700/[0.8] font-thin text-sm hover:shadow-md border-2 border-gray-400/[0.1] px-2 py-1 rounded-full bg-slate-900/[0.1]">{{tagName}}</div>
-                        }
-                    </div>
+                    }
+                    @case ("list") {
+                        <ul class="list-disc flex flex-col pl-10 my-2">
+                            @for (listItem of item.value; track $index) {
+                                <li>{{listItem}}</li>
+                            }
+                        </ul>
+                    }
+                    @case ("keywords") {
+                        <div class="flex flex-wrap gap-2 select-none my-2">
+                            @for (keyword of item.value; track $index) {
+                                <div class="shadow-sm text-gray-700/[0.8] font-thin text-sm hover:shadow-md border-2 border-gray-400/[0.1] px-2 py-1 rounded-full bg-slate-900/[0.1]">{{keyword}}</div>
+                            }
+                        </div>
+                    }
+                    @case ("site") {
+                        <div class="flex justify-center">
+                            <a [href]="item.siteLink" class="w-full">
+                                <div class="w-full flex gap-4 my-2 rounded-xl border-black/[0.1] p-2 bg-gray-500/[0.1] hover:bg-gray-600/[0.2]">
+                                    <div class="bg-slate-400 w-max p-2 -rotate-45 rounded-full">
+                                        <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M14 7H16C18.7614 7 21 9.23858 21 12C21 14.7614 18.7614 17 16 17H14M10 7H8C5.23858 7 3 9.23858 3 12C3 14.7614 5.23858 17 8 17H10M8 12H16" stroke="#ffffff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    
+                                    <div class="flex flex-col justify-center">
+                                        <p class="text-sm text-black/[0.8] font-medium">{{item.siteTitle}}</p>
+                                        <p class="text-xs text-black/[0.5]">{{item.siteSubTitle}}</p>
+                                    </div>
+                                </div>
+                            </a>
+                            
+                        </div>
+                    }
                 }
             }
+            
         </div>
         <div class="w-100"></div>
     </div>
@@ -152,7 +169,7 @@
     <div class="flex gap-x-2 justify-center mt-10 scale-75">
         
         <div class="border-[1px] h-10 w-10 pt-[2px] pl-[0px] bg-white rounded-full flex items-center justify-center" (click)="like()"><mat-icon class="text-gray-500/[0.2] hover:text-gray-950/[0.3] cursor-pointer" aria-hidden="false" aria-label="Example home icon" fontIcon="favorite"></mat-icon></div>
-        <div class="border-[1px] h-10 w-10 pt-[2px] pl-[0px] bg-white rounded-full flex items-center justify-center" (click)="like()"><mat-icon class="text-gray-500/[0.2] hover:text-gray-950/[0.3] cursor-pointer" aria-hidden="false" aria-label="Example home icon" fontIcon="share"></mat-icon></div>
+        <div class="border-[1px] h-10 w-10 pt-[2px] pl-[0px] bg-white rounded-full flex items-center justify-center" (click)="copyLink()"><mat-icon class="text-gray-500/[0.2] hover:text-gray-950/[0.3] cursor-pointer" aria-hidden="false" aria-label="Example home icon" fontIcon="share"></mat-icon></div>
         <div class="border-[1px] h-10 w-10 pt-[2px] pl-[0px] bg-white rounded-full flex items-center justify-center" (click)="comment()"><mat-icon class="text-gray-500/[0.2] hover:text-gray-950/[0.3] cursor-pointer" aria-hidden="false" aria-label="Example home icon" fontIcon={{comment_icon}}></mat-icon></div>
     </div>
 
@@ -163,23 +180,28 @@
                 <p class="text-slate-800/[0.5] mx-2 dark:text-white font-medium text-lg">Feedback</p>
                 <div class="flex">
                     <div class="flex-1 flex flex-col items-center gap-2.5 p-5 max-h-[435px]">
-                        <div class="flex flex-col w-full leading-1.5 p-4 border-gray-200 bg-blue-500 rounded-l-xl rounded-br-xl dark:bg-blue-900">
-                            <div class="flex items-center space-x-2 rtl:space-x-reverse">
-                               <span class="text-sm font-medium text-gray-100 dark:text-white">Author</span>
-                               <span class="text-sm font-normal text-gray-300 dark:text-gray-400">11:46</span>
-                            </div>
-                            <p class="text-sm font-normal py-2.5 text-gray-200 dark:text-white">Check out this open-source UI component library based on Tailwind CSS:</p>
-                            <p class="text-sm font-normal pb-2.5 text-gray-200 dark:text-white"><a href="https://github.com/themesberg/flowbite" class="text-blue-700 dark:text-blue-500 underline hover:no-underline font-medium break-all">https://github.com/themesberg/flowbite</a></p>
-                        </div>
-                        @for (item of comments; track $index) {
-                            <div class="flex flex-col w-full leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl dark:bg-gray-700">
-                                <div class="flex items-center space-x-2 rtl:space-x-reverse">
-                                   <span class="text-sm font-medium text-gray-900 dark:text-white">Bonnie Green</span>
-                                   <span class="text-sm font-normal text-gray-500 dark:text-gray-400">11:46</span>
+                        
+                        @for (item of article.feedbacks; track $index) {
+                            @if (item.sender==="author") {
+                                <div class="flex flex-col w-full leading-1.5 p-4 border-gray-200 bg-blue-500 rounded-l-xl rounded-br-xl dark:bg-blue-900">
+                                    <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                                       <span class="text-sm font-medium text-gray-100 dark:text-white">{{item.sender|titlecase}}</span>
+                                       <span class="text-sm font-normal text-gray-300 dark:text-gray-400">{{item.date}}</span>
+                                    </div>
+                                    <p class="text-sm font-normal py-2.5 text-gray-200 dark:text-white">{{item.value}}</p>
+                                    <!-- <p class="text-sm font-normal pb-2.5 text-gray-200 dark:text-white"><a href="https://github.com/themesberg/flowbite" class="text-blue-700 dark:text-blue-500 underline hover:no-underline font-medium break-all">https://github.com/themesberg/flowbite</a></p> -->
                                 </div>
-                                <p class="text-sm font-normal py-2.5 text-gray-900 dark:text-white">Check out this open-source UI component library based on Tailwind CSS:</p>
-                                <p class="text-sm font-normal pb-2.5 text-gray-900 dark:text-white"><a href="https://github.com/themesberg/flowbite" class="text-blue-700 dark:text-blue-500 underline hover:no-underline font-medium break-all">https://github.com/themesberg/flowbite</a></p>
-                            </div>  
+                            }
+                            @else {
+                                <div class="flex flex-col w-full leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl dark:bg-gray-700">
+                                    <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                                       <span class="text-sm font-medium text-gray-900 dark:text-white">{{item.sender| titlecase}}</span>
+                                       <span class="text-sm font-normal text-gray-500 dark:text-gray-400">{{item.date}}</span>
+                                    </div>
+                                    <p class="text-sm font-normal py-2.5 text-gray-900 dark:text-white">{{item.value}}</p>
+                                    <!-- <p class="text-sm font-normal pb-2.5 text-gray-900 dark:text-white"><a href="https://github.com/themesberg/flowbite" class="text-blue-700 dark:text-blue-500 underline hover:no-underline font-medium break-all">https://github.com/themesberg/flowbite</a></p> -->
+                                </div> 
+                            }    
                         }
                     </div>
                     <div class="flex flex-col gap-2">

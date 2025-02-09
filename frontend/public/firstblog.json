@@ -1,0 +1,65 @@
+[
+    {
+        "meta":{
+            "id":"1",
+            "title":"God's Blessing on this wonderful world",
+            "category":"FIRST COMMIT",
+            "image":"firstblog/mainimage.jpg",
+            "date":"feb 9, 2025",
+            "views":"100",
+            "likes":"10",
+            "description":"Whispers from the Himalayas: A Journey Through Celestial Gardens and Eternal Peaks"
+        },
+        "data":[
+            {
+                "datatype":"keywords",
+                "value":["Himalayas","Nature"]
+            },
+            {
+
+                "datatype":"quote",
+                "value":"And into the himalyas, I go to lose my mind and find my soul.",
+                "quoter":"unkown"
+            },
+            {
+                "datatype":"subHeading",
+                "value":"Whispers from the Himalayas: A Journey Through Celestial Gardens and Eternal Peaks"
+            },
+            {
+                "datatype":"subText",
+                "value":"I set forth into the deep heart of the Himalayas, where the very air seemed to be painted with the hues of ancient dreams and timeless legends. As I ventured beyond the beaten path, every step became a verse in an epic poem—an invitation to explore a world that exists both within and beyond our grasp of reality."
+            },
+            {
+                "datatype":"image",
+                "imageSrc":"firstblog/wishper.webp",
+                "imageTitle":"the timless hills"
+            },
+            {
+                "datatype":"subHeading",
+                "value":"The Enchanted Hills"
+            },
+            {
+                "datatype":"subText",
+                "value":"The mountains rose like solemn guardians, their undulating contours echoing the soft, lingering notes of a forgotten lullaby. Each hill was a masterpiece, sculpted not merely by nature but by the whispers of ages past. The peaks, veiled in delicate mists at dawn, shimmered like halos of stardust against the vast canvas of the sky. I felt as if I had stepped into a living dream—a realm where time wove itself into a tapestry of light and shadow, each thread a memory of the earth's ancient heartbeat."
+            },
+            {
+                "datatype":"site",
+                "siteTitle":"My favourates Himalayas peaks",
+                "siteSubTitle":"",
+                "siteLink":"https://www.himalayanwonders.com/blog/the-14-most-beautiful-peaks-of-the-himalayas.html"
+            }
+        ],
+        "feedbacks":[
+            {
+                "sender":"author",
+                "date":"10th feb",
+                "value":"Into the blessigs of god"
+            },
+            {
+                "sender":"readers",
+                "date":"10th feb",
+                "value":"Into the blessigs of god"
+            }
+        ]
+    }
+]

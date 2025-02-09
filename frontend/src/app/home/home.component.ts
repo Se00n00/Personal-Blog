@@ -1,8 +1,10 @@
-import { ChangeDetectionStrategy, Component, Signal, WritableSignal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, Signal, WritableSignal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { signal } from '@angular/core';
+
+import articles from '../../../public/articles.json'
 
 @Component({
   selector: 'app-home',
@@ -19,6 +21,9 @@ export class HomeComponent {
   madelogout(){
     this.logined.set(false)
   }
+
+  public articles = articles;
+  
   
   type = "web Design"
   numView = 100

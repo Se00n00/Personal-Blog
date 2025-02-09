@@ -25,28 +25,24 @@
 <input type="text" name="" placeholder="Search" class="w-full placeholder:text-black/[0.5] bg-gray-400/[0.1] active:bg-white box-border hover:shadow-xl rounded-lg h-12 pl-4 transition-shadow my-3">
 <hr class="text-black/[0.8] my-0 mb-4">
 
-@if (items.length >0) {
-    <div [routerLink]="['/article']" class="flex flex-col hover:text-gray-800/[0.8] text-black/[0.8] cursor-pointer w-full mb-10">
-        <div class="relative bg-gradient-to-tr h-[75vh] md:h-[78vh] from-indigo-500 to-indigo-900 rounded-2xl mb-2 shadow-sm hover:saturate-200 transition-all">
-            <img src="" alt="" style="color: #00000031;">
+@if (articles.length >0) {
+    <div [routerLink]="['/article',articles[0].id]" class="flex flex-col hover:text-gray-800/[0.8] text-black/[0.8] cursor-pointer w-full mb-10">
+        <div class="overflow-hidden relative bg-gradient-to-tr h-[75vh] md:h-[78vh] from-indigo-500 to-indigo-900 rounded-2xl mb-2 shadow-sm hover:saturate-[1.18] transition-all">
+            <img [src]="articles[0].image" class="absolute w-full h-full object-cover" alt="" style="color: #00000031;">
             <div class="absolute right-0 shadow-[0px_0px_0px_11px] shadow-white text-black/[0.6] text-[10px] flex flex-col items-center px-4 py-2 rounded-full bg-gray-400/[0.6]">
                 <div class="absolute h-12 w-12 rounded-full -bottom-[58px] right-0 shadow-[15px_-15px_0px_-5px] shadow-white bg-transparent"></div>
                 <div class="absolute h-12 w-12 rounded-full -left-[58px] top-0 shadow-[15px_-20px_0px_-6px] shadow-white bg-transparent"></div>
-                {{type | uppercase}}
+                {{articles[0].category| uppercase}}
             </div>
             <div class="absolute flex flex-col justify-end h-full w-full p-5">
-                <div class="text-2xl font-[500] font-content text-white hover:text-white/[0.8]">The best Website design practices lorem10</div>
+                <div class="text-2xl font-[500] font-content text-white hover:text-white/[0.8]">{{articles[0].title}}</div>
                     <div class="font-medium flex justify-between ">
-                        <div class="text-white text-[10px] flex flex-col items-center px-2 py-1 rounded-md">{{current_Date | date}}</div>
+                        <div class="text-white text-[10px] flex flex-col items-center px-2 py-1 rounded-md">{{articles[0].date | date}}</div>
                         <div class="flex gap-2 text-xs text-white/[0.5] items-center">
-                            <div class="flex gap-1">
-                                <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-                                    width="15px" height="15px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
-                                    <path fill="#ffffff31" d="M47.977,5.99c-sm4.416,0-8.414,1.792-11.308,4.686l-4.685,4.654l-4.686-4.654
-                                        C24.406,7.782,20.408,5.99,15.992,5.99C7.161,5.99,0,13.15,0,21.982c0,4.416,2.85,8.539,5.747,11.432l23.41,23.414
-                                        c1.562,1.562,4.092,1.562,5.653,0l23.349-23.352c2.896-2.893,5.81-7.078,5.81-11.494C63.969,13.15,56.808,5.99,47.977,5.99z"/>
-                                </svg>
-                                {{numLiked}}
+                            <div class="flex gap-0 items-center">
+                                
+                            <mat-icon class="text-gray-500/[0.2] mb-1 cursor-pointer text-xl" aria-hidden="false" aria-label="Example home icon" fontIcon="favorite"></mat-icon>
+                                {{articles[0].likes}}
                             </div>
                             <div class="flex gap-1">
                                 <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
@@ -55,7 +51,7 @@
                                     c-0.379,0.953-0.379,2.016,0,2.969C0.651,34.406,9.55,56,31.999,56s31.348-21.594,31.715-22.516
                                     C64.093,32.531,64.093,31.469,63.714,30.516z M31.999,40c-4.418,0-8-3.582-8-8s3.582-8,8-8s8,3.582,8,8S36.417,40,31.999,40z"/>
                                 </svg>
-                                {{numView}}
+                                {{articles[0].views}}
                             </div>
                         </div>
                     </div>
@@ -68,11 +64,14 @@
 }
 
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 p-2">
-    @for (item of items; track $index) {
+    @for (item of articles; track $index) {
         @if ($index != 0) {
-            <div [routerLink]="['/article']" class="flex flex-col hover:text-gray-800/[0.8] text-black/[0.8] cursor-pointer w-full">
-                <div class="relative bg-gradient-to-tr h-[300px] md:h-[400px] from-indigo-500 to-indigo-900 rounded-2xl mb-2 shadow-sm hover:saturate-200 transition-all">
-                    <img src="" alt="" style="color: #00000031;">
+            <div [routerLink]="['/article',item.id]" class="flex flex-col hover:text-gray-800/[0.8] text-black/[0.8] cursor-pointer w-full">
+                <div class="object-contain overflow-hidden relative bg-gradient-to-tr h-[300px] md:h-[400px] from-indigo-500 to-indigo-900 rounded-2xl mb-2 shadow-sm hover:saturate-[1.18] transition-all">
+                    
+                    <div class="absolute w-full h-full object-fill">
+                        <img [src]="item.image" class=" absolute w-full h-full object-cover" alt="" style="color: #00000031;">
+                    </div>
                     <div class="absolute right-0 shadow-[0px_0px_0px_11px] shadow-white text-black/[0.6] text-[10px] flex flex-col items-center px-4 py-2 rounded-full bg-gray-400/[0.6]">
                         <div class="absolute h-12 w-12 rounded-full -bottom-[58px] right-0 shadow-[15px_-15px_0px_-5px] shadow-white bg-transparent"></div>
                         <div class="absolute h-12 w-12 rounded-full -left-[58px] top-0 shadow-[15px_-20px_0px_-6px] shadow-white bg-transparent"></div>
@@ -80,16 +79,11 @@
                     </div>
                 </div>
                 <div class="font-medium flex justify-between ">
-                    <div class="text-gray-500 text-[10px] flex flex-col items-center px-2 py-1 rounded-md">{{current_Date | date}}</div>
+                    <div class="text-gray-500 text-[10px] flex flex-col items-center px-2 py-1 rounded-md">{{item.date| date}}</div>
                     <div class="flex gap-2 text-xs text-black/[0.5] items-center">
-                        <div class="flex gap-1">
-                            <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-                                width="15px" height="15px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
-                                <path fill="#00000031" d="M47.977,5.99c-sm4.416,0-8.414,1.792-11.308,4.686l-4.685,4.654l-4.686-4.654
-                                    C24.406,7.782,20.408,5.99,15.992,5.99C7.161,5.99,0,13.15,0,21.982c0,4.416,2.85,8.539,5.747,11.432l23.41,23.414
-                                    c1.562,1.562,4.092,1.562,5.653,0l23.349-23.352c2.896-2.893,5.81-7.078,5.81-11.494C63.969,13.15,56.808,5.99,47.977,5.99z"/>
-                            </svg>
-                            {{numLiked}}
+                        <div class="flex gap-0 items-center">
+                            <mat-icon class="text-gray-500/[0.2] mb-1  cursor-pointer text-xl" aria-hidden="false" aria-label="Example home icon" fontIcon="favorite"></mat-icon>
+                            {{item.likes}}
                         </div>
                         <div class="flex gap-1">
                             <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
@@ -98,7 +92,7 @@
                                 c-0.379,0.953-0.379,2.016,0,2.969C0.651,34.406,9.55,56,31.999,56s31.348-21.594,31.715-22.516
                                 C64.093,32.531,64.093,31.469,63.714,30.516z M31.999,40c-4.418,0-8-3.582-8-8s3.582-8,8-8s8,3.582,8,8S36.417,40,31.999,40z"/>
                             </svg>
-                            {{numView}}
+                            {{item.views}}
                         </div>
                     </div>
                 </div>
