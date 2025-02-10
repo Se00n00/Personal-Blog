@@ -64,6 +64,10 @@ export class ArticlesComponent {
     this.copied.update(value => value="copied")
   }
 
+  scrolltoid(id:any){
+    const element = document.getElementById(id)
+    element?.scrollIntoView()
+  }
   type = "web Design"
   numView = 100
   numComments = 1
