@@ -25,11 +25,11 @@ export class HomeComponent {
   public articles = articles;
   
   
-  type = "web Design"
-  numView = 100
-  numComments = 1
-  numLiked = 10
+  // type = "web Design"
+  // numView = 100
+  // numComments = 1
+  // numLiked = 10
 
-  items= [1,2,3,4,5]
-  current_Date = new Date()
+  // items= [1,2,3,4,5]
+  // current_Date = new Date()
 }

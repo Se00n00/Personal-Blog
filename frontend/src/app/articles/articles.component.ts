@@ -50,9 +50,9 @@ export class ArticlesComponent {
         this.router.navigate(['blog does not exits'])
       }
       // this.router.navigate(['/item', iRouter.navem.id]);
-      //console.log(this.article)
+      // console.log(firstblog)
 
-      console.log('Item ID:', this.itemId);
+      // console.log('Item ID:', this.itemId);
     });
   }
   copyLink() {

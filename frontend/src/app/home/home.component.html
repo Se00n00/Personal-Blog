@@ -75,12 +75,12 @@
                     <div class="absolute right-0 shadow-[0px_0px_0px_11px] shadow-white text-black/[0.6] text-[10px] flex flex-col items-center px-4 py-2 rounded-full bg-gray-400/[0.6]">
                         <div class="absolute h-12 w-12 rounded-full -bottom-[58px] right-0 shadow-[15px_-15px_0px_-5px] shadow-white bg-transparent"></div>
                         <div class="absolute h-12 w-12 rounded-full -left-[58px] top-0 shadow-[15px_-20px_0px_-6px] shadow-white bg-transparent"></div>
-                        {{type | uppercase}}
+                        {{item.category | uppercase}}
                     </div>
                 </div>
                 <div class="font-medium flex justify-between ">
                     <div class="text-gray-500 text-[10px] flex flex-col items-center px-2 py-1 rounded-md">{{item.date| date}}</div>
-                    <div class="flex gap-2 text-xs text-black/[0.5] items-center">
+                    <!-- <div class="flex gap-2 text-xs text-black/[0.5] items-center">
                         <div class="flex gap-0 items-center">
                             <mat-icon class="text-gray-500/[0.2] mb-1  cursor-pointer text-xl" aria-hidden="false" aria-label="Example home icon" fontIcon="favorite"></mat-icon>
                             {{item.likes}}
@@ -94,9 +94,9 @@
                             </svg>
                             {{item.views}}
                         </div>
-                    </div>
+                    </div> -->
                 </div>
-                <div class="text-lg font-[500] font-content text-black/[0.7] hover:text-black/[0.8]">The best Website design practices</div>
+                <div class="text-lg font-[500] font-content text-black/[0.7] hover:text-black/[0.8]">{{item.title}}</div>
                 
             </div>
         }
