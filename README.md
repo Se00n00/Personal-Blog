@@ -49,7 +49,7 @@ Each article should be added with the following structure:
 3. Deploy the blog to GitHub Pages:
 
    ```bash
-   ng deploy --base-href=/<Personal-Blog>/
+   ng deploy --base-href=/Personal-Blog/
    ```
 
 
