@@ -1,17 +1,17 @@
 [
     {
-        "id":1,
-        "title":"God's Blessing on this wonderful world",
-        "category":"FIRST COMMIT",
-        "image":"firstblog/mainimage.jpg",
-        "date":"feb 9, 2025",
+        "id":2,
+        "title":"An Intorduction to IT Regulations in India",
+        "category":"CYBER SECURITY",
+        "image":"firstblog/itact2000.png",
+        "date":"may 13, 2025",
         "views":"100",
         "likes":"10",
-        "description":"Whispers from the Himalayas: A Journey Through Celestial Gardens and Eternal Peaks"
+        "description":"An overview of the IT Act 2000 and related Indian legal frameworks addressing cybercrime, digital evidence, intermediary liability, and jurisdictional challenges. This article outlines key provisions, enforcement workflows, and international cooperation mechanisms like Interpol."
     },
     {
-        "id":10,
-        "title":"This is Text Web",
+        "id":1,
+        "title":"God's Blessing on this wonderful world",
         "category":"FIRST COMMIT",
         "image":"firstblog/mainimage.jpg",
         "date":"feb 9, 2025",

@@ -61,5 +61,141 @@
                 "value":"Into the blessigs of god"
             }
         ]
+    },
+    {
+        "meta":{
+            "id":"2",
+            "title":"An Intorduction to IT Regulations in India",
+            "category":"CYBER SECURITY",
+            "image":"firstblog/itact2000.png",
+            "date":"may 13, 2025",
+            "views":"100",
+            "likes":"10",
+            "description":"An overview of the IT Act 2000 and related Indian legal frameworks addressing cybercrime, digital evidence, intermediary liability, and jurisdictional challenges. This article outlines key provisions, enforcement workflows, and international cooperation mechanisms like Interpol."
+        },
+        "data": [
+            {
+                "datatype": "keywords",
+                "value": ["IT Act 2000", "Cyber Law", "Digital India", "Cybercrime", "Regulation"]
+            },
+            {
+                "datatype": "subHeading",
+                "value": "Introduction & Objectives"
+            },
+            {
+                "datatype": "subText",
+                "value": "The Information Technology Act, 2000 (IT Act 2000) laid the foundational legal framework for regulating digital and online activities in India. It grants legal recognition to electronic commerce, digital records, and electronic signatures. Additionally, it aims to address cybercrime, electronic contracts, data protection, and governance in the digital domain."
+            },
+            {
+                "datatype": "subHeading",
+                "value": "Cybercrime Handling Workflow"
+            },
+            {
+                "datatype": "subText",
+                "value": "In the event of a cybercrime, the victim reports the incident to an adjudicating officer, who assesses the nature of the case. If it is a civil issue, a penalty may be imposed. If it is criminal, it is either handled by the cyber cell or referred to the court based on severity."
+            },
+            {
+                "datatype": "subHeading",
+                "value": "Intermediary Liability"
+            },
+            {
+                "datatype": "subText",
+                "value": "An intermediary is any entity that stores or transmits data on behalf of others—such as social media platforms or ISPs. The IT Act protects intermediaries from liability if they follow due diligence, but they lose this protection if they have knowledge of illegal content. Amendments now require compliance officers, harmful content removal, and oversight of significant social media intermediaries."
+            },
+            {
+                "datatype": "subHeading",
+                "value": "Evidentiary Value of Electronic Records"
+            },
+            {
+                "datatype": "subText",
+                "value": "Documents like emails, SMS, and digitally signed records carry legal evidentiary value. If accompanied by a valid digital certificate, such records can be used as legal evidence in court."
+            },
+            {
+                "datatype": "subHeading",
+                "value": "Cybercrimes Under the IT Act, 2000"
+            },
+            {
+                "datatype": "list",
+                "value": [
+                    "Section 43 – Penalty for unauthorized access, damage to computer systems.",
+                    "Section 43A – Compensation for failure to protect sensitive data.",
+                    "Section 66 – Hacking: Unauthorized access to computer systems.",
+                    "Section 66A – Sending offensive messages via electronic communication.",
+                    "Section 66C – Identity theft: Using someone else's digital identity.",
+                    "Section 66D – Cheating by impersonation through online means."
+                ]
+            },
+            {
+                "datatype": "subHeading",
+                "value": "Cybercrimes and IPC"
+            },
+            {
+                "datatype": "list",
+                "value": [
+                    "Section 420 – Cheating and online fraud.",
+                    "Section 469 – Forgery, including cyber forgery.",
+                    "Section 507 – Criminal intimidation using electronic communication."
+                ]
+            },
+            {
+                "datatype": "subHeading",
+                "value": "Cybercrime and the RBI Act"
+            },
+            {
+                "datatype": "list",
+                "value": [
+                    "Section 25 – Cybersecurity in banking.",
+                    "Section 26A – Electronic funds transfer governance.",
+                    "Section 32 – Fraudulent practices involving digital transactions."
+                ]
+            },
+            {
+                "datatype": "subHeading",
+                "value": "Cybercrime and the IPR Act"
+            },
+            {
+                "datatype": "list",
+                "value": [
+                    "Copyright Infringement – Unauthorized sharing or use of digital media.",
+                    "Trademark Infringement – Illegal usage of brand identities online.",
+                    "Patent Infringement – Violation of patented technologies in digital space."
+                ]
+            },
+            {
+                "datatype": "subHeading",
+                "value": "Jurisdiction and Challenges in Cybercrime Cases"
+            },
+            {
+                "datatype": "subText",
+                "value": "Cybercrimes are difficult to investigate due to anonymity and limited law enforcement training. Jurisdiction is also complex as cases often cross national borders."
+            },
+            {
+                "datatype": "subHeading",
+                "value": "Challenges in International Jurisdiction"
+            },
+            {
+                "datatype": "subText",
+                "value": "Cybercrimes often involve multiple legal systems. Varying laws, inconsistent enforcement, and lack of international agreements create barriers to justice."
+            },
+            {
+                "datatype": "subHeading",
+                "value": "Role of Interpol"
+            },
+            {
+                "datatype": "list",
+                "value": [
+                    "Facilitates cross-border cybercrime investigations.",
+                    "Shares intelligence among member nations.",
+                    "Supports law enforcement agencies globally.",
+                    "Collaborates with private sectors to combat cyber threats."
+                ]
+            },
+            {
+                "datatype":"site",
+                "siteTitle":"Official IT Act 2000",
+                "siteSubTitle":"",
+                "siteLink":"https://www.indiacode.nic.in/bitstream/123456789/13116/1/it_act_2000_updated.pdf"
+            }
+        ]
     }
 ]
