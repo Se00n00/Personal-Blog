@@ -58,33 +58,19 @@ export class ArticlesComponent {
   copyLink() {
     const url = window.location.href;
     navigator.clipboard.writeText(url)
+    alert(`Link Copied: ${url}`)
   }
   copycontent(codeContent:string){
     navigator.clipboard.writeText(codeContent);
     this.copied.update(value => value="copied")
   }
 
-  scrolltoid(id:any){
-    const element = document.getElementById(id)
-    element?.scrollIntoView()
+  scrolltoid(id: any) {
+    const element = document.getElementById(id);
+    element?.scrollIntoView({
+      behavior: 'smooth', // Enables smooth scrolling
+      block: 'start',     // Scrolls to the top of the element
+      inline: 'nearest'   // Optional: aligns horizontally nearest edge
+    });
   }
-  type = "web Design"
-  numView = 100
-  numComments = 1
-  numLiked = 10
-  conditioned:string =""
-
-  quoteText = "This iS a quote"
-  ImageTitle = "Just A Title"
-  imageSrc = "https://c4.wallpaperflare.com/wallpaper/292/446/516/ultra-wide-photography-wallpaper-preview.jpg"
-  text = "Sample Text"
-  headingText = "Heading"
-  subHeadingText = "subHeading"
-  listItem = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, ea?"
-  tagName = "Deep Learning"
-  items = ["a","a","a","a","a","a","a","a","a","a","a","a","a"]
-
-  codeLanguage="typescript"
-  code = "#include stdio.h int main() printf()"
-  comments = [1,1]
 }

@@ -1,7 +1,7 @@
-<div class="flex justify-between font-heading select-none">
-    <div [routerLink]="['/']" class="text-gray-900/[0.6] text-4xl font-bold cursor-pointer hover:text-black/[0.5]">Blog</div>
+<div class=" flex justify-between font-heading select-none">
+    <div [routerLink]="['/']" class="text-slate-950 text-4xl font-bold cursor-pointer hover:text-black/[0.5]">Blog</div>
     <div class="flex gap-4 self-end items-center">
-        <div class="text-gray-500 self-center hover:text-gray-900">Mohit's Blogs</div>
+        <div class="text-slate-950 self-center hover:text-gray-900">Mohit's Blogs</div>
 
         @if (logined()) {
             <div [routerLink]="['/exit']" (click)="madelogout()" class="stroke-slate-600 hover:stroke-black cursor-pointer">
@@ -12,24 +12,32 @@
             </div>
         }@else {
             <!-- [routerLink]="['/login']" -->
-            <div (click)="madelogin()" class="stroke-slate-600 hover:stroke-black cursor-pointer">
+            <!-- <div (click)="madelogin()" class="stroke-slate-600 hover:stroke-black cursor-pointer">
                 <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M2.00098 11.999L16.001 11.999M16.001 11.999L12.501 8.99902M16.001 11.999L12.501 14.999" stroke="inherit" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M9.00195 7C9.01406 4.82497 9.11051 3.64706 9.87889 2.87868C10.7576 2 12.1718 2 15.0002 2L16.0002 2C18.8286 2 20.2429 2 21.1215 2.87868C22.0002 3.75736 22.0002 5.17157 22.0002 8L22.0002 16C22.0002 18.8284 22.0002 20.2426 21.1215 21.1213C20.3531 21.8897 19.1752 21.9862 17 21.9983M9.00195 17C9.01406 19.175 9.11051 20.3529 9.87889 21.1213C10.5202 21.7626 11.4467 21.9359 13 21.9827" stroke="inherit" stroke-width="1.5" stroke-linecap="round"/>
                 </svg>
-            </div>
+            </div> -->
         }
         
     </div>
 </div>
-<input type="text" name="" placeholder="Search" class="w-full placeholder:text-black/[0.5] bg-gray-400/[0.1] active:bg-white box-border hover:shadow-xl rounded-lg h-12 pl-4 transition-shadow my-3">
-<hr class="text-black/[0.8] my-0 mb-4">
+<div >
+    <input [(ngModel)]="binding"  (keyup.enter)="onInputChange()" (input)="onInputChange()"  type="text" name="" placeholder="Search" class=" w-full placeholder:text-black/[0.5] bg-gray-400/[0.1] active:bg-white box-border hover:shadow-xl rounded-lg h-12 pl-4 transition-shadow my-3">
+    <hr class="text-black/[0.8] my-0 mb-4">
+</div>
+
+@if (articles.length == 0) {
+    <div class="min-h-screen flex items-center justify-center">
+        <h2 class="text-black/[0.1] text-5xl">No Articles Found!</h2>
+    </div>
+}
 
 @if (articles.length >0) {
     <div [routerLink]="['/article',articles[0].id]" class="flex flex-col hover:text-gray-800/[0.8] text-black/[0.8] cursor-pointer w-full mb-10">
         <div class="overflow-hidden relative bg-gradient-to-tr h-[75vh] md:h-[78vh] from-indigo-500 to-indigo-900 rounded-2xl mb-2 shadow-sm hover:saturate-[1.18] transition-all">
             <img [src]="articles[0].image" class="absolute w-full h-full object-cover" alt="" style="color: #00000031;">
-            <div class="absolute right-0 shadow-[0px_0px_0px_11px] shadow-white text-black/[0.6] text-[10px] flex flex-col items-center px-4 py-2 rounded-full bg-gray-400/[0.6]">
+            <div class="absolute right-0 shadow-[0px_0px_0px_11px] shadow-white text-white text-[10px] flex flex-col items-center px-4 py-2 rounded-full bg-gray-400/[0.6]">
                 <div class="absolute h-12 w-12 rounded-full -bottom-[58px] right-0 shadow-[15px_-15px_0px_-5px] shadow-white bg-transparent"></div>
                 <div class="absolute h-12 w-12 rounded-full -left-[58px] top-0 shadow-[15px_-20px_0px_-6px] shadow-white bg-transparent"></div>
                 {{articles[0].category| uppercase}}
@@ -37,14 +45,14 @@
             <div class="absolute flex flex-col justify-end h-full w-full p-5">
                 <div class="text-2xl font-[500] font-content text-white hover:text-white/[0.8]">{{articles[0].title}}</div>
                     <div class="font-medium flex justify-between ">
-                        <div class="text-white text-[10px] flex flex-col items-center px-2 py-1 rounded-md">{{articles[0].date | date}}</div>
+                        <!-- <div class="text-white text-[10px] flex flex-col items-center px-2 py-1 rounded-md">{{articles[0].date | date}}</div> -->
                         <div class="flex gap-2 text-xs text-white/[0.5] items-center">
-                            <div class="flex gap-0 items-center">
-                                
+                            <!-- <div class="flex gap-0 items-center"> -->
+<!--                                 
                             <mat-icon class="text-gray-500/[0.2] mb-1 cursor-pointer text-xl" aria-hidden="false" aria-label="Example home icon" fontIcon="favorite"></mat-icon>
                                 {{articles[0].likes}}
-                            </div>
-                            <div class="flex gap-1">
+                            </div> -->
+                            <!-- <div class="flex gap-1">
                                 <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
                                     width="17px" height="17px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
                                 <path fill="#ffffff31" d="M63.714,30.516C63.347,29.594,54.448,8,31.999,8S0.651,29.594,0.284,30.516
@@ -52,7 +60,7 @@
                                     C64.093,32.531,64.093,31.469,63.714,30.516z M31.999,40c-4.418,0-8-3.582-8-8s3.582-8,8-8s8,3.582,8,8S36.417,40,31.999,40z"/>
                                 </svg>
                                 {{articles[0].views}}
-                            </div>
+                            </div> -->
                         </div>
                     </div>
             </div>
@@ -72,14 +80,14 @@
                     <div class="absolute w-full h-full object-fill">
                         <img [src]="item.image" class=" absolute w-full h-full object-cover" alt="" style="color: #00000031;">
                     </div>
-                    <div class="absolute right-0 shadow-[0px_0px_0px_11px] shadow-white text-black/[0.6] text-[10px] flex flex-col items-center px-4 py-2 rounded-full bg-gray-400/[0.6]">
+                    <div class="absolute right-0 shadow-[0px_0px_0px_11px] shadow-white text-white text-[10px] flex flex-col items-center px-4 py-2 rounded-full bg-gray-400/[0.6]">
                         <div class="absolute h-12 w-12 rounded-full -bottom-[58px] right-0 shadow-[15px_-15px_0px_-5px] shadow-white bg-transparent"></div>
                         <div class="absolute h-12 w-12 rounded-full -left-[58px] top-0 shadow-[15px_-20px_0px_-6px] shadow-white bg-transparent"></div>
                         {{item.category | uppercase}}
                     </div>
                 </div>
                 <div class="font-medium flex justify-between ">
-                    <div class="text-gray-500 text-[10px] flex flex-col items-center px-2 py-1 rounded-md">{{item.date| date}}</div>
+                    <!-- <div class="text-gray-500 text-[10px] flex flex-col items-center px-2 py-1 rounded-md">{{item.date| date}}</div> -->
                     <!-- <div class="flex gap-2 text-xs text-black/[0.5] items-center">
                         <div class="flex gap-0 items-center">
                             <mat-icon class="text-gray-500/[0.2] mb-1  cursor-pointer text-xl" aria-hidden="false" aria-label="Example home icon" fontIcon="favorite"></mat-icon>
@@ -104,16 +112,4 @@
     }
     
     
-</div>
-<div class="flex justify-center text-sm mt-20 mb-28" >
-    <div class="bg-gray-600/[0.2] p-2 px-3 rounded-full flex justify-center items-center gap-2">
-        <div role="status">
-            <svg aria-hidden="true" class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-white" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
-                <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
-            </svg>
-            <span class="sr-only">Loading...</span>
-        </div>
-        More Coming Soon
-    </div>
 </div>
