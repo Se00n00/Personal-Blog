@@ -1,5 +1,15 @@
 [
     {
+        "id":3,
+        "title":"Decoding stategies in LLMs",
+        "category":"DEEP LEARNING",
+        "image":"firstblog/decodingStrategies.jpg",
+        "date":"July 22, 2025",
+        "views":"100",
+        "likes":"10",
+        "description":"image source: https://huggingface.co/blog/mlabonne/decoding-strategies"
+    },
+    {
         "id":2,
         "title":"An Intorduction to IT Regulations in India",
         "category":"CYBER SECURITY",

@@ -101,23 +101,29 @@
                             }
                             @case ("image") {
                                 <div class="flex -z-10 justify-center items-center flex-col">
-                                    <div class="object-contain flex flex-col gap-1 my-2 border-2 rounded-xl border-black/[0.1] p-2 bg-gray-500/[0.2]">
-                                        <img src= "{{item.imageSrc}}" alt="an image" class="h-[700px] w-[800px] -z-0 object-cover flex-1 self-center rounded-xl hover:saturate-[1.15]">
+                                    <div class="object-contain flex flex-col gap-1 my-2 border-2 rounded-xl border-black/[0.1] p-0.5">
+                                        <img src= "{{item.imageSrc}}" alt="an image" class="h-[700px] w-[800px] -z-0 object-cover flex-1 self-center rounded-lg hover:saturate-[1.15]">
                                     </div>
                                     <p class="flex-1 self-center text-sm text-black/[0.5]">{{item.imageTitle | titlecase}}</p>
                                 </div>
                             }
                             @case ("text") {
-                                <p class="my-2 text-base font-light">{{item.value}}</p>
+                                <p class="my-2 text-base font-light p-2">{{item.value}}</p>
                             }
                             @case ("subText") {
-                                <p class="my-2 text-sm font-light">{{item.value}}</p>
+                                <p class="my-2 text-sm font-light p-3">{{item.value}}</p>
                             }
                             @case ("heading") {
                                 <p [id]="item.value" class="my-2 text-3xl font-light">{{item.value}}</p>
                             }
                             @case ("subHeading") {
-                                <p [id]="item.value" class="my-2 text-xl">{{item.value}}</p>
+                                <p [id]="item.value" class="my-2 text-xl font-light p-1">{{item.value}}</p>
+                            }
+                            @case ("explanation") {
+                                <div class="shadow-md shadow-black/[0.1] border border-black/[0.2] rounded-lg my-2 p-3 flex  gap-2 items-center">
+                                    <img src="annotation.svg" alt="" class="h-10">
+                                    <p [id]="item.value" class="text-sm font-light text-black/[0.8]">{{item.value}}</p>
+                                </div>
                             }
                             @case ("code") {
                                 <div class="flex flex-col bg-slate-500 rounded-xl p-2 box-border">

@@ -35,7 +35,7 @@
 
 @if (articles.length >0) {
     <div [routerLink]="['/article',articles[0].id]" class="flex flex-col hover:text-gray-800/[0.8] text-black/[0.8] cursor-pointer w-full mb-10">
-        <div class="overflow-hidden relative bg-gradient-to-tr h-[75vh] md:h-[78vh] from-indigo-500 to-indigo-900 rounded-2xl mb-2 shadow-sm hover:saturate-[1.18] transition-all">
+        <div class="overflow-hidden relative aspect-video bg-gradient-to-tr from-indigo-500 to-indigo-900 rounded-2xl mb-2 shadow-sm hover:saturate-[1.18] transition-all">
             <img [src]="articles[0].image" class="absolute w-full h-full object-cover" alt="" style="color: #00000031;">
             <div class="absolute right-0 shadow-[0px_0px_0px_11px] shadow-white text-white text-[10px] flex flex-col items-center px-4 py-2 rounded-full bg-gray-400/[0.6]">
                 <div class="absolute h-12 w-12 rounded-full -bottom-[58px] right-0 shadow-[15px_-15px_0px_-5px] shadow-white bg-transparent"></div>
@@ -75,7 +75,7 @@
     @for (item of articles; track $index) {
         @if ($index != 0) {
             <div [routerLink]="['/article',item.id]" class="flex flex-col hover:text-gray-800/[0.8] text-black/[0.8] cursor-pointer w-full">
-                <div class="object-contain overflow-hidden relative bg-gradient-to-tr h-[300px] md:h-[400px] from-indigo-500 to-indigo-900 rounded-2xl mb-2 shadow-sm hover:saturate-[1.18] transition-all">
+                <div class="object-contain aspect-video overflow-hidden relative bg-gradient-to-tr from-indigo-500 to-indigo-900 rounded-2xl mb-2 shadow-sm hover:saturate-[1.18] transition-all">
                     
                     <div class="absolute w-full h-full object-fill">
                         <img [src]="item.image" class=" absolute w-full h-full object-cover" alt="" style="color: #00000031;">

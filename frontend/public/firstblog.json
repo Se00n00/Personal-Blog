@@ -197,5 +197,97 @@
                 "siteLink":"https://www.indiacode.nic.in/bitstream/123456789/13116/1/it_act_2000_updated.pdf"
             }
         ]
+    },{
+        "meta":{
+            "id":"3",
+            "title":"Decoding stategies in LLMs",
+            "category":"DEEP LEARNING",
+            "image":"firstblog/decodingStrategies.jpg",
+            "date":"July 22, 2025",
+            "views":"100",
+            "likes":"10"
+        },
+        "data": [
+            {
+                "datatype": "keywords",
+                "value": ["LLMs","Transformers","Decoding Strategies","Beam Search","Greedy Search","Top-K","Nuclues/Top-P","Sampling","Temperature"]
+            },{
+                "datatype": "text",
+                "value": "Large Language Models excel at predicting the next token, but their generated text often lacks coherence and diversity, limiting its overall usefulness. This is where decoding strategies come into play, helping to generate text that is more human-like and natural."
+            },
+            {
+                "datatype":"site",
+                "siteTitle":"Google Collab - Decoding Strategies",
+                "siteSubTitle":"Collab Notebook for this blog",
+                "siteLink":"https://colab.research.google.com/drive/1m_IisbR9xq_PcuBFh7YB8yJCDTIHIfzB?usp=sharing"
+            },
+            {
+                "datatype":"heading",
+                "value": "Prerequisite"
+            },
+            {
+                "datatype":"text",
+                "value":"Before Heading on lets first define the model and its tokenizer. for this blog, i am using open-sourced gpt-2 model"
+            },
+            {
+                "datatype":"image",
+                "imageSrc":"firstblog/blog_3/importing-required_packages.png",
+                "imageTitle":""
+            },
+            {
+                "datatype":"image",
+                "imageSrc":"firstblog/blog_3/initiallize_model.png",
+                "imageTitle":"Used light weighted opensource model like gpt-2"
+            },
+            {
+                "datatype": "heading",
+                "value": "Greedy Search Decoding"
+            },
+            {
+                "datatype":"text",
+                "value":"In this approach, the token with the highest probability is selected as the next one. This aligns with how these models are trained—to predict the most likely next token."
+            },
+            {
+                "datatype":"image",
+                "imageSrc":"firstblog/blog_3/greedy_decoding.png",
+                "imageTitle":" "
+            },
+            {
+                "datatype":"image",
+                "imageSrc":"firstblog/blog_3/greedy_decoding_output.png",
+                "imageTitle":"here, the output is repeating after certain token"
+            },
+            {
+                "datatype":"explanation",
+                "value":"Greedy search selects the next token based solely on the highest immediate probability, without considering long-term structure. As a result, frequently occurring token sequences from the training data are more likely to be repeatedly selected during inference, leading to noticeable repetition."
+            },
+            {
+                "datatype": "heading",
+                "value": "Beam Search Decoding"
+            },
+            {
+                "datatype":"image",
+                "imageSrc":"firstblog/blog_3/beam_search_decoding.png",
+                "imageTitle":"here, the output is repeating after certain token"
+            },
+            {
+                "datatype": "heading",
+                "value": "Sampling"
+            },
+            {
+                "datatype":"image",
+                "imageSrc":"firstblog/blog_3/sampling_decoding.png",
+                "imageTitle":"here, the output is repeating after certain token"
+            },
+            {
+                "datatype": "heading",
+                "value": "Sampling With Top-K or Nuclues"
+            },
+            {
+                "datatype":"image",
+                "imageSrc":"firstblog/blog_3/sampling_with_topk_topp.png",
+                "imageTitle":"here, the output is repeating after certain token"
+            }
+        ]
     }
 ]
