@@ -8,24 +8,7 @@
         <!-- FOOTER STARTS HERE -->
         <section>
           <div class="max-w-screen-xl px-4 p-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
-              <div class="flex justify-between -mx-5 -my-2">
-                  <nav class="flex flex-wrap justify-center ">
-                      <div class="px-5 py-2">
-                          <a [routerLink]="['']" class="text-base leading-6 text-gray-500 hover:text-gray-900">
-                              Home
-                          </a>
-                      </div>
-                      <div class="px-5 py-2">
-                          <a href="https://se00n00.github.io/My_Portfolio/" class="text-base leading-6 text-gray-500 hover:text-gray-900">
-                              Portfolio
-                          </a>
-                      </div>
-                      <div class="px-5 py-2">
-                          <a href="mailto:mohit.kumar.builds@gmail.com" class="text-base leading-6 text-gray-500 hover:text-gray-900">
-                              Contact
-                          </a>
-                      </div>
-                  </nav>
+              <div class="flex justify-center -mx-5 -my-2">
                     <div class="flex justify-center space-x-6">
                         @if (auth.loggedIn()) {
                             <div [routerLink]="['/exit']" (click)="logout()" title="Log out" class="stroke-slate-600 hover:stroke-black cursor-pointer">
