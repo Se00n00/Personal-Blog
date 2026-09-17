@@ -39,26 +39,37 @@ let mongoReady = false
 let mongoError = null
 const bcrypt = require('bcryptjs')
 
+let mongoPromise = null
 async function initMongo() {
   if (!MONGODB_URI) {
     mongoError = 'MONGODB_URI not set'
     console.warn('[mongo] MONGODB_URI not set — image upload will be disabled (still serving db.json)')
     return
   }
-  try {
-    mongoClient = new MongoClient(MONGODB_URI, { serverSelectionTimeoutMS: 5000 })
-    await mongoClient.connect()
-    const db = mongoClient.db('personal-blog')
-    bucket = new GridFSBucket(db, { bucketName: 'images' })
-    mongoReady = true
-    mongoError = null
-    console.log('[mongo] connected, GridFS bucket `images` ready (personal-blog)')
-  } catch (e) {
-    mongoError = e.message
-    console.warn('[mongo] connection failed — image upload disabled:', e.message)
-  }
+  if (mongoPromise) return mongoPromise
+  mongoPromise = (async () => {
+    try {
+      mongoClient = new MongoClient(MONGODB_URI, { serverSelectionTimeoutMS: 5000 })
+      await mongoClient.connect()
+      const db = mongoClient.db('personal-blog')
+      bucket = new GridFSBucket(db, { bucketName: 'images' })
+      mongoReady = true
+      mongoError = null
+      console.log('[mongo] connected, GridFS bucket `images` ready (personal-blog)')
+    } catch (e) {
+      mongoError = e.message
+      console.warn('[mongo] connection failed — image upload disabled:', e.message)
+    }
+  })()
+  return mongoPromise
 }
 initMongo()
+
+async function ensureMongo() {
+  if (mongoReady) return true
+  if (mongoPromise) await mongoPromise
+  return mongoReady
+}
 
 const upload = multer({
   storage: multer.memoryStorage(),
@@ -72,8 +83,9 @@ const upload = multer({
 // POST /api/upload  — field `image`, returns { url, fileId, filename }
 // URL can be dropped into markdown as ![alt](url)
 server.post('/api/upload', upload.single('image'), async (req, res) => {
+  await ensureMongo()
   if (!mongoReady || !bucket) {
-    return res.status(503).json({ error: 'Image storage not ready (MongoDB not connected). Check MONGODB_URI.' })
+    return res.status(503).json({ error: 'Image storage not ready (MongoDB not connected). Check MONGODB_URI.', mongoError })
   }
   if (!req.file) return res.status(400).json({ error: 'No image file (field `image`)' })
   try {
@@ -102,7 +114,8 @@ server.post('/api/upload', upload.single('image'), async (req, res) => {
 
 // GET /api/images/:id — stream image from GridFS
 server.get('/api/images/:id', async (req, res) => {
-  if (!mongoReady || !bucket) return res.status(503).json({ error: 'Image storage not ready' })
+  await ensureMongo()
+  if (!mongoReady || !bucket) return res.status(503).json({ error: 'Image storage not ready', mongoError })
   try {
     const id = new ObjectId(req.params.id)
     const files = await bucket.find({ _id: id }).toArray()
@@ -117,13 +130,15 @@ server.get('/api/images/:id', async (req, res) => {
 })
 
 // Health for uploads — includes last error so you can debug Vercel without logs
-server.get('/api/upload/health', (_req, res) => {
+server.get('/api/upload/health', async (_req, res) => {
+  await ensureMongo()
   res.json({ mongoReady, hasUri: !!MONGODB_URI, mongoError: mongoError || null, uriPrefix: MONGODB_URI ? MONGODB_URI.slice(0, 32) + '...' : null })
 })
 
 // --- Auth via MongoDB (replaces db.json authors) ---
 server.post('/api/login', async (req, res) => {
-  if (!mongoReady || !mongoClient) return res.status(503).json({ error: 'Auth not ready' })
+  await ensureMongo()
+  if (!mongoReady || !mongoClient) return res.status(503).json({ error: 'Auth not ready', mongoError })
   const { username, password } = req.body || {}
   if (!username || !password) return res.status(400).json({ error: 'Missing username/password' })
   try {
@@ -141,6 +156,7 @@ server.post('/api/login', async (req, res) => {
 
 // Backward compat: old frontend did GET /authors?username=&password= — now proxy to MongoDB
 async function handleGetAuthors(req, res) {
+  await ensureMongo()
   if (!mongoReady || !mongoClient) return res.json([])
   const { username, password } = req.query || {}
   if (!username || !password) return res.json([])
