@@ -1,10 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: ["./src/**/*.{html,ts}",],
   theme: {
     fontFamily:{
-      heading: [ "Roboto", "serif" ],
-      content: [ "Open Sans", "serif" ]
+      heading: [ "JetBrains Mono", "monospace" ],
+      content: [ "JetBrains Mono", "monospace" ],
+      mono: [ "JetBrains Mono", "monospace" ]
     },
     extend: {
       colors: {

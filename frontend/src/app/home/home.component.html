@@ -1,115 +1,88 @@
 <div class=" flex justify-between font-heading select-none">
-    <div [routerLink]="['/']" class="text-slate-950 text-4xl font-bold cursor-pointer hover:text-black/[0.5]">Blog</div>
+    <div class="flex items-center gap-3">
+        <div [routerLink]="['/']" class="text-slate-950 text-4xl font-bold cursor-pointer hover:text-black/[0.5]">00's Blog</div>
+        <a href="https://github.com/Se00n00" target="_blank" rel="noopener" title="GitHub" class="opacity-70 hover:opacity-100 transition-opacity">
+            <img src="github.svg" alt="GitHub" class="w-6 h-6 dark:invert">
+        </a>
+    </div>
     <div class="flex gap-4 self-end items-center">
-        <div class="text-slate-950 self-center hover:text-gray-900">Mohit's Blogs</div>
-
-        @if (logined()) {
-            <div [routerLink]="['/exit']" (click)="madelogout()" class="stroke-slate-600 hover:stroke-black cursor-pointer">
+        <button (click)="theme.toggle()" title="Toggle day/night" aria-label="Toggle day/night" class="stroke-slate-600 hover:stroke-black cursor-pointer dark:stroke-slate-400 dark:hover:stroke-white">
+            @if (theme.isDark()) {
+                <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="4" stroke="inherit" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" stroke="inherit" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            } @else {
+                <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="inherit" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            }
+        </button>
+        @if (auth.loggedIn()) {
+            <div [routerLink]="['/exit']" (click)="logout()" title="Log out" class="stroke-slate-600 hover:stroke-black cursor-pointer dark:stroke-slate-400 dark:hover:stroke-white">
                 <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M15 12L2 12M2 12L5.5 9M2 12L5.5 15" stroke="inherit" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M9.00195 7C9.01406 4.82497 9.11051 3.64706 9.87889 2.87868C10.7576 2 12.1718 2 15.0002 2L16.0002 2C18.8286 2 20.2429 2 21.1215 2.87868C22.0002 3.75736 22.0002 5.17157 22.0002 8L22.0002 16C22.0002 18.8284 22.0002 20.2426 21.1215 21.1213C20.3531 21.8897 19.1752 21.9862 17 21.9983M9.00195 17C9.01406 19.175 9.11051 20.3529 9.87889 21.1213C10.5202 21.7626 11.4467 21.9359 13 21.9827" stroke="inherit" stroke-width="1.5" stroke-linecap="round"/>
                 </svg>
             </div>
-        }@else {
-            <!-- [routerLink]="['/login']" -->
-            <!-- <div (click)="madelogin()" class="stroke-slate-600 hover:stroke-black cursor-pointer">
-                <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2.00098 11.999L16.001 11.999M16.001 11.999L12.501 8.99902M16.001 11.999L12.501 14.999" stroke="inherit" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M9.00195 7C9.01406 4.82497 9.11051 3.64706 9.87889 2.87868C10.7576 2 12.1718 2 15.0002 2L16.0002 2C18.8286 2 20.2429 2 21.1215 2.87868C22.0002 3.75736 22.0002 5.17157 22.0002 8L22.0002 16C22.0002 18.8284 22.0002 20.2426 21.1215 21.1213C20.3531 21.8897 19.1752 21.9862 17 21.9983M9.00195 17C9.01406 19.175 9.11051 20.3529 9.87889 21.1213C10.5202 21.7626 11.4467 21.9359 13 21.9827" stroke="inherit" stroke-width="1.5" stroke-linecap="round"/>
-                </svg>
-            </div> -->
         }
         
     </div>
 </div>
-<div >
-    <input [(ngModel)]="binding"  (keyup.enter)="onInputChange()" (input)="onInputChange()"  type="text" name="" placeholder="Search" class=" w-full placeholder:text-black/[0.5] bg-gray-400/[0.1] active:bg-white box-border hover:shadow-xl rounded-lg h-12 pl-4 transition-shadow my-3">
-    <hr class="text-black/[0.8] my-0 mb-4">
+
+<div class="mt-8 mb-2">
+    <p class="text-black/[0.55] text-[15px]">I try my best to bring my work in easy words.</p>
 </div>
 
-@if (articles.length == 0) {
-    <div class="min-h-screen flex items-center justify-center">
-        <h2 class="text-black/[0.1] text-5xl">No Articles Found!</h2>
+@if (loading) {
+    <div class="py-16 flex items-center justify-center">
+        <h2 class="text-black/[0.3] text-xl">Loading articles…</h2>
     </div>
 }
 
-@if (articles.length >0) {
-    <div [routerLink]="['/article',articles[0].id]" class="flex flex-col hover:text-gray-800/[0.8] text-black/[0.8] cursor-pointer w-full mb-10">
-        <div class="overflow-hidden relative aspect-video bg-gradient-to-tr from-indigo-500 to-indigo-900 rounded-2xl mb-2 shadow-sm hover:saturate-[1.18] transition-all">
-            <img [src]="articles[0].image" class="absolute w-full h-full object-cover" alt="" style="color: #00000031;">
-            <div class="absolute right-0 shadow-[0px_0px_0px_11px] shadow-white text-white text-[10px] flex flex-col items-center px-4 py-2 rounded-full bg-gray-400/[0.6]">
-                <div class="absolute h-12 w-12 rounded-full -bottom-[58px] right-0 shadow-[15px_-15px_0px_-5px] shadow-white bg-transparent"></div>
-                <div class="absolute h-12 w-12 rounded-full -left-[58px] top-0 shadow-[15px_-20px_0px_-6px] shadow-white bg-transparent"></div>
-                {{articles[0].category| uppercase}}
-            </div>
-            <div class="absolute flex flex-col justify-end h-full w-full p-5">
-                <div class="text-2xl font-[500] font-content text-white hover:text-white/[0.8]">{{articles[0].title}}</div>
-                    <div class="font-medium flex justify-between ">
-                        <!-- <div class="text-white text-[10px] flex flex-col items-center px-2 py-1 rounded-md">{{articles[0].date | date}}</div> -->
-                        <div class="flex gap-2 text-xs text-white/[0.5] items-center">
-                            <!-- <div class="flex gap-0 items-center"> -->
-<!--                                 
-                            <mat-icon class="text-gray-500/[0.2] mb-1 cursor-pointer text-xl" aria-hidden="false" aria-label="Example home icon" fontIcon="favorite"></mat-icon>
-                                {{articles[0].likes}}
-                            </div> -->
-                            <!-- <div class="flex gap-1">
-                                <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-                                    width="17px" height="17px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
-                                <path fill="#ffffff31" d="M63.714,30.516C63.347,29.594,54.448,8,31.999,8S0.651,29.594,0.284,30.516
-                                    c-0.379,0.953-0.379,2.016,0,2.969C0.651,34.406,9.55,56,31.999,56s31.348-21.594,31.715-22.516
-                                    C64.093,32.531,64.093,31.469,63.714,30.516z M31.999,40c-4.418,0-8-3.582-8-8s3.582-8,8-8s8,3.582,8,8S36.417,40,31.999,40z"/>
-                                </svg>
-                                {{articles[0].views}}
-                            </div> -->
-                        </div>
-                    </div>
-            </div>
+@if (!loading && error) {
+    <div class="py-16 flex flex-col gap-4 items-center justify-center">
+        <h2 class="text-red-500/[0.7] text-xl">{{ error }}</h2>
+        <button (click)="loadArticles()" class="border-2 py-2 px-4 rounded-full bg-slate-950 text-white text-sm">Retry</button>
+    </div>
+}
+
+@if (!loading && !error) {
+    <div class="flex items-center justify-between mt-6 mb-2">
+        <span class="flex-1"></span>
+        @if (auth.loggedIn()) {
+            <a [routerLink]="['/create']" class="text-xs font-medium text-white bg-slate-950 hover:bg-slate-950/[0.7] transition-colors rounded-full px-3 py-1.5">+ New</a>
+        }
+    </div>
+
+    @if (articles.length == 0) {
+        <div class="py-16 flex items-center justify-center">
+            <h2 class="text-black/[0.15] text-3xl">No Articles Found!</h2>
         </div>
-        
-        
-        
-    </div>
-}
-
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-10 p-2">
-    @for (item of articles; track $index) {
-        @if ($index != 0) {
-            <div [routerLink]="['/article',item.id]" class="flex flex-col hover:text-gray-800/[0.8] text-black/[0.8] cursor-pointer w-full">
-                <div class="object-contain aspect-video overflow-hidden relative bg-gradient-to-tr from-indigo-500 to-indigo-900 rounded-2xl mb-2 shadow-sm hover:saturate-[1.18] transition-all">
-                    
-                    <div class="absolute w-full h-full object-fill">
-                        <img [src]="item.image" class=" absolute w-full h-full object-cover" alt="" style="color: #00000031;">
-                    </div>
-                    <div class="absolute right-0 shadow-[0px_0px_0px_11px] shadow-white text-white text-[10px] flex flex-col items-center px-4 py-2 rounded-full bg-gray-400/[0.6]">
-                        <div class="absolute h-12 w-12 rounded-full -bottom-[58px] right-0 shadow-[15px_-15px_0px_-5px] shadow-white bg-transparent"></div>
-                        <div class="absolute h-12 w-12 rounded-full -left-[58px] top-0 shadow-[15px_-20px_0px_-6px] shadow-white bg-transparent"></div>
-                        {{item.category | uppercase}}
-                    </div>
-                </div>
-                <div class="font-medium flex justify-between ">
-                    <!-- <div class="text-gray-500 text-[10px] flex flex-col items-center px-2 py-1 rounded-md">{{item.date| date}}</div> -->
-                    <!-- <div class="flex gap-2 text-xs text-black/[0.5] items-center">
-                        <div class="flex gap-0 items-center">
-                            <mat-icon class="text-gray-500/[0.2] mb-1  cursor-pointer text-xl" aria-hidden="false" aria-label="Example home icon" fontIcon="favorite"></mat-icon>
-                            {{item.likes}}
-                        </div>
-                        <div class="flex gap-1">
-                            <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-                                width="17px" height="17px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
-                            <path fill="#00000031" d="M63.714,30.516C63.347,29.594,54.448,8,31.999,8S0.651,29.594,0.284,30.516
-                                c-0.379,0.953-0.379,2.016,0,2.969C0.651,34.406,9.55,56,31.999,56s31.348-21.594,31.715-22.516
-                                C64.093,32.531,64.093,31.469,63.714,30.516z M31.999,40c-4.418,0-8-3.582-8-8s3.582-8,8-8s8,3.582,8,8S36.417,40,31.999,40z"/>
+    } @else {
+        <div class="border-t border-black/[0.08] min-h-[62vh]">
+            @for (item of articles; track item.id) {
+                <div [routerLink]="['/article', item.id]" [title]="item.description || item.title"
+                    class="blog-row group grid grid-cols-[auto_minmax(0,1fr)_auto_auto] items-baseline gap-x-4 px-2 py-3 border-b border-black/[0.08] cursor-pointer transition-colors hover:bg-black/[0.03]">
+                    <span class="row-date">{{ shortDate(item.date) }}</span>
+                    <span class="min-w-0">
+                        <span class="row-title block truncate text-[15px] text-black/[0.8] group-hover:text-black">{{ item.title }}</span>
+                        @if (item.description) {
+                            <span class="row-desc">{{ item.description }}</span>
+                        }
+                    </span>
+                    <span class="row-views" [title]="(item.views ?? 0) + ' views'">{{ item.views ?? 0 }}</span>
+                    @if (auth.loggedIn()) {
+                        <button (click)="editArticle($event, item.id)" title="Edit article"
+                            class="row-edit justify-self-end text-black/[0.35] hover:text-black transition-all" aria-label="Edit article">
+                            <svg width="15px" height="15px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 20H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16.5 3.5C16.8978 3.10218 17.4374 2.87868 18 2.87868C18.5626 2.87868 19.1022 3.10218 19.5 3.5C19.8978 3.89782 20.1213 4.43739 20.1213 5C20.1213 5.56261 19.8978 6.10218 19.5 6.5L7 19L3 20L4 16L16.5 3.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            {{item.views}}
-                        </div>
-                    </div> -->
+                        </button>
+                    }
                 </div>
-                <div class="text-lg font-[500] font-content text-black/[0.7] hover:text-black/[0.8]">{{item.title}}</div>
-                
-            </div>
-        }
-        
+            }
+        </div>
     }
-    
-    
-</div>
+}

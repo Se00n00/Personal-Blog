@@ -9,4 +9,236 @@
 }
 
 html, body { height: 100%;}
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace; transition: background-color 0.3s ease, color 0.3s ease; }
+html.dark { color-scheme: dark; }
+
+/* ===== Dark theme overrides (global) ===== */
+
+/* App shell — swap the blue gradient for a dark-blue surface */
+html.dark main {
+    background: linear-gradient(to bottom, #06122a, #0f2e5a) !important;
+}
+html.dark main > div > div {
+    background: #0a1931 !important;
+    color: #e2e8f0;
+}
+html.dark .bg-white.rounded-xl {
+    background: #0a1931 !important;
+    color: #e2e8f0;
+}
+
+/* Home page */
+html.dark .text-slate-950 {
+    color: #f1f5f9 !important;
+}
+html.dark .text-black\/\[0\.8\] {
+    color: #e2e8f0 !important;
+}
+html.dark .text-black\/\[0\.55\] {
+    color: #94a3b8 !important;
+}
+html.dark .text-black\/\[0\.4\] {
+    color: #64748b !important;
+}
+html.dark .border-black\/\[0\.08\] {
+    border-color: #1f1f26 !important;
+}
+html.dark .hover\:bg-black\/\[0\.03\]:hover {
+    background-color: #17171d !important;
+}
+html.dark .text-black\/\[0\.35\] {
+    color: #64748b !important;
+}
+html.dark .text-black\/\[0\.3\] {
+    color: #475569 !important;
+}
+html.dark .text-black\/\[0\.15\] {
+    color: #2b2b33 !important;
+}
+html.dark .hover\:text-black\/\[0\.5\]:hover {
+    color: #e2e8f0 !important;
+}
+
+/* Article page */
+html.dark .text-gray-700 {
+    color: #cbd5e1 !important;
+}
+html.dark .text-gray-950\/\[0\.3\] {
+    color: #94a3b8 !important;
+}
+html.dark .bg-slate-200 {
+    background-color: #334155 !important;
+}
+html.dark .bg-slate-950 {
+    background-color: #1a1a20 !important;
+}
+html.dark .hover\:bg-slate-950\/\[0\.5\]:hover {
+    background-color: #1a1a20 !important;
+}
+html.dark .bg-slate-500 {
+    background-color: #26262e !important;
+}
+html.dark .bg-slate-950\/\[0\.7\] {
+    background-color: #1a1a20 !important;
+}
+html.dark .bg-white {
+    background-color: #0a1931 !important;
+}
+html.dark .border-white\/\[0\.2\] {
+    border-color: #475569 !important;
+}
+html.dark .bg-black\/\[0\.1\] {
+    background-color: #17171d !important;
+}
+html.dark .text-white\/\[0\.5\] {
+    color: #94a3b8 !important;
+}
+html.dark .text-white\/\[0\.6\] {
+    color: #94a3b8 !important;
+}
+
+/* Footer */
+html.dark .text-gray-500,
+html.dark .text-gray-400 {
+    color: #94a3b8 !important;
+}
+html.dark .text-gray-900 {
+    color: #f1f5f9 !important;
+}
+
+/* Home list rows — custom rgba colours need explicit dark variants */
+html.dark .blog-row .row-date,
+html.dark .blog-row .row-views {
+    color: rgba(255,255,255,0.45) !important;
+}
+html.dark .blog-row .row-desc {
+    color: rgba(255,255,255,0.45) !important;
+}
+html.dark .blog-row:hover .row-desc {
+    color: rgba(255,255,255,0.65) !important;
+}
+html.dark .blog-row .row-title {
+    color: #e2e8f0 !important;
+}
+
+/* Raw-markdown doc sheet — pure white in light, dark-blue in dark */
+.md-sheet {
+    background: #ffffff;
+    color: #1a1a1a;
+}
+.md-muted {
+    color: rgba(0, 0, 0, 0.45);
+}
+html.dark .md-sheet {
+    background: #0a1931 !important;
+    color: #d6d6db;
+    border-color: #1a2f52 !important;
+}
+html.dark .md-sheet .border-black\/10 {
+    border-color: #1a2f52 !important;
+}
+html.dark .md-sheet .border-t {
+    border-color: #1a2f52 !important;
+}
+html.dark .md-muted {
+    color: rgba(255, 255, 255, 0.4) !important;
+}
+html.dark .md-sheet .border-black\/30 {
+    border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Rendered markdown inside the sheet — markers stay visible (muted) */
+.md-sheet .md-h1 { font-size: 1.55em; font-weight: 700; line-height: 1.3; }
+.md-sheet .md-h2 { font-size: 1.3em; font-weight: 700; line-height: 1.35; }
+.md-sheet .md-h3 { font-size: 1.12em; font-weight: 700; }
+.md-sheet strong { font-weight: 700; }
+.md-code-inline {
+    background: rgb(240, 240, 240);
+    color: rgb(36, 41, 47);
+    border-radius: 0.3em;
+    padding: 0 0.35em;
+    font-size: 0.92em;
+    font-variant-ligatures: none;
+}
+html.dark .md-code-inline { background: rgb(45, 51, 59); color: rgb(201, 209, 217); }
+/* Code: light = GH light, dark = Ayu Dark (Zed) */
+.md-codeblock {
+    background: rgb(246, 248, 250);
+    color: rgb(36, 41, 47);
+    border: 1px solid rgb(208, 215, 222);
+    padding: 0;
+    overflow: hidden;
+    font-variant-ligatures: none;
+    border-radius: 0.5rem;
+    margin: 0.75rem 0;
+    text-shadow: none !important;
+    filter: none !important;
+}
+.md-codeblock, .md-codeblock * { text-shadow: none !important; box-shadow: none !important; }
+.md-codeblock .code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    background: rgb(235, 237, 240);
+    border-bottom: 1px solid rgb(208, 215, 222);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgb(92, 103, 115);
+}
+.md-codeblock pre {
+    margin: 0;
+    padding: 0.75rem;
+    background: transparent;
+    overflow-x: visible;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+.md-codeblock pre code.hljs {
+    background: transparent;
+    padding: 0;
+    color: inherit;
+    text-shadow: none !important;
+    white-space: pre-wrap !important;
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+    overflow-x: visible !important;
+}
+.md-codeblock .hljs {
+    overflow-x: visible !important;
+    white-space: pre-wrap !important;
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+}
+/* Ayu keyword */
+.md-codeblock .hljs-comment { color: rgb(106, 115, 125); font-style: italic; }
+.md-codeblock .hljs-keyword { color: rgb(255, 167, 89); }
+.md-codeblock .hljs-string { color: rgb(16, 94, 16); }
+.md-codeblock .hljs-number,
+.md-codeblock .hljs-literal { color: rgb(0, 92, 197); }
+.md-codeblock .hljs-title.function_ { color: rgb(121, 93, 163); }
+.md-codeblock .hljs-built_in { color: rgb(0, 92, 197); }
+html.dark .md-codeblock { background: rgb(15, 20, 25); color: rgb(191, 189, 182); border-color: rgb(19, 28, 33); }
+html.dark .md-codeblock .code-header { background: rgb(11, 16, 21); border-bottom-color: rgb(19, 28, 33); color: rgb(92, 103, 115); }
+html.dark .md-codeblock .hljs-comment { color: rgb(92, 103, 115); }
+html.dark .md-codeblock .hljs-keyword { color: rgb(255, 167, 89); }
+html.dark .md-codeblock .hljs-string { color: rgb(184, 204, 82); }
+html.dark .md-codeblock .hljs-number,
+html.dark .md-codeblock .hljs-literal { color: rgb(210, 166, 255); }
+html.dark .md-codeblock .hljs-title.function_ { color: rgb(255, 180, 84); }
+html.dark .md-codeblock .hljs-built_in { color: rgb(89, 194, 255); }
+html.dark .md-rule { display: flex; align-items: center; gap: 0.75rem; }
+.md-rule-line { flex: 1; height: 1px; background: currentColor; opacity: 0.18; }
+
+
+
+/* Smooth colour transitions for the theme switch */
+main,
+main > div > div,
+.text-slate-950,
+.text-black,
+.bg-white {
+    transition: background-color 0.3s ease, color 0.2s ease;
+}

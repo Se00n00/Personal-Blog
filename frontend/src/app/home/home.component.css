@@ -1,0 +1,58 @@
+/* Writer-style minimal list rows */
+
+.blog-row .row-date {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.45);
+  font-variant-numeric: tabular-nums;
+  min-width: 3rem;
+}
+
+/* Description: single muted truncated line; expands smoothly on hover.
+   (max-height is used because line-clamp cannot be transitioned.) */
+.blog-row .row-desc {
+  display: block;
+  max-height: 1.4em;
+  overflow: hidden;
+  font-size: 13px;
+  line-height: 1.4;
+  color: rgba(0, 0, 0, 0.42);
+  margin-top: 2px;
+  transition: max-height 0.35s ease, color 0.25s ease;
+}
+
+.blog-row:hover .row-desc {
+  max-height: 12em;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.blog-row .row-views {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.45);
+  font-variant-numeric: tabular-nums;
+  min-width: 2.5rem;
+  text-align: right;
+}
+
+/* Edit pencil: only visible while hovering its row */
+.blog-row .row-edit {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.blog-row:hover .row-edit,
+.blog-row .row-edit:focus-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Dark overrides for the custom row colours (global html.dark wins) */
+:host-context(html.dark) .row-date,
+:host-context(html.dark) .row-views {
+  color: rgba(255, 255, 255, 0.45);
+}
+:host-context(html.dark) .row-desc {
+  color: rgba(255, 255, 255, 0.45);
+}
+:host-context(html.dark) .blog-row:hover .row-desc {
+  color: rgba(255, 255, 255, 0.65);
+}

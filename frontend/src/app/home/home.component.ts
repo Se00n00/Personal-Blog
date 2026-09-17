@@ -1,55 +1,80 @@
-import { ChangeDetectionStrategy, Component, OnInit, Signal, WritableSignal } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatIconModule } from '@angular/material/icon';
-import { RouterLink } from '@angular/router';
-import { signal } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
+import { Router, RouterLink } from '@angular/router';
 
-import articles from '../../../public/articles.json'
+import { BlogService, ArticleListItem } from '../services/blog.service';
+import { AuthService } from '../services/auth.service';
+import { ThemeService } from '../services/theme.service';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, MatIconModule, RouterLink, FormsModule],
+  imports: [CommonModule, RouterLink],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
-  binding = ""
-  article:any[] = []
+export class HomeComponent implements OnInit {
+  private blogService = inject(BlogService);
+  private cdr = inject(ChangeDetectorRef);
+  private router = inject(Router);
+  auth = inject(AuthService);
+  theme = inject(ThemeService);
 
-  logined: WritableSignal<boolean> = signal(false)
-  madelogin(){
-    this.logined.set(true)
-  }
-  madelogout(){
-    this.logined.set(false)
-  }
+  public articles: ArticleListItem[] = [];
+  loading = true;
+  error: string | null = null;
 
-
-  public articles:any[] = articles;
-  getArticles(){
-    this.articles = articles;
+  ngOnInit() {
+    this.loadArticles();
   }
 
-  onInputChange(){
-    const searchTerm = this.binding.trim().toLowerCase();
-    if (!searchTerm) {
-      this.getArticles(); // Reset to full list
-      return;
+  loadArticles() {
+    this.loading = true;
+    this.error = null;
+    this.blogService.getArticles().subscribe({
+      next: (data) => {
+        this.articles = [...data];
+        this.loading = false;
+        this.cdr.markForCheck();
+      },
+      error: () => {
+        this.error = 'Could not load articles. Is the API running?';
+        this.loading = false;
+        this.cdr.markForCheck();
+      }
+    });
+  }
+
+  logout() {
+    this.auth.logout();
+  }
+
+  /** "July 22, 2025" -> "07/25" for the list's date column. */
+  shortDate(date: string | undefined): string {
+    if (!date) {
+      return '';
     }
-
-    this.articles = this.articles.filter(article =>
-      article.title.toLowerCase().includes(searchTerm)
-    );
+    const months: Record<string, number> = {
+      january: 1, february: 2, march: 3, april: 4, may: 5, june: 6,
+      july: 7, august: 8, september: 9, october: 10, november: 11, december: 12,
+      jan: 1, feb: 2, mar: 3, apr: 4, jun: 6, jul: 7, aug: 8,
+      sep: 9, sept: 9, oct: 10, nov: 11, dec: 12
+    };
+    const match = date.trim().match(/^([a-zA-Z]+)\s+\d{1,2},?\s+(\d{4})/);
+    if (!match) {
+      return '';
+    }
+    const month = months[match[1].toLowerCase()];
+    if (!month) {
+      return '';
+    }
+    const year = match[2].slice(2);
+    return `${String(month).padStart(2, '0')}/${year}`;
   }
-  
-  // type = "web Design"
-  // numView = 100
-  // numComments = 1
-  // numLiked = 10
 
-  // items= [1,2,3,4,5]
-  // current_Date = new Date()
+  editArticle(event: Event, id: string) {
+    event.stopPropagation();
+    event.preventDefault();
+    this.router.navigate(['/edit', id]);
+  }
 }
