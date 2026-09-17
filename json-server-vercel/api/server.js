@@ -36,10 +36,12 @@ const MONGODB_URI = process.env.MONGODB_URI || ''
 let mongoClient = null
 let bucket = null
 let mongoReady = false
+let mongoError = null
 const bcrypt = require('bcryptjs')
 
 async function initMongo() {
   if (!MONGODB_URI) {
+    mongoError = 'MONGODB_URI not set'
     console.warn('[mongo] MONGODB_URI not set — image upload will be disabled (still serving db.json)')
     return
   }
@@ -49,8 +51,10 @@ async function initMongo() {
     const db = mongoClient.db('personal-blog')
     bucket = new GridFSBucket(db, { bucketName: 'images' })
     mongoReady = true
+    mongoError = null
     console.log('[mongo] connected, GridFS bucket `images` ready (personal-blog)')
   } catch (e) {
+    mongoError = e.message
     console.warn('[mongo] connection failed — image upload disabled:', e.message)
   }
 }
@@ -112,9 +116,9 @@ server.get('/api/images/:id', async (req, res) => {
   }
 })
 
-// Health for uploads
+// Health for uploads — includes last error so you can debug Vercel without logs
 server.get('/api/upload/health', (_req, res) => {
-  res.json({ mongoReady, hasUri: !!MONGODB_URI })
+  res.json({ mongoReady, hasUri: !!MONGODB_URI, mongoError: mongoError || null, uriPrefix: MONGODB_URI ? MONGODB_URI.slice(0, 32) + '...' : null })
 })
 
 // --- Auth via MongoDB (replaces db.json authors) ---
