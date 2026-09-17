@@ -14,16 +14,16 @@ html.dark { color-scheme: dark; }
 
 /* ===== Dark theme overrides (global) ===== */
 
-/* App shell — swap the blue gradient for a dark-blue surface */
+/* App shell — keep bright blue outer, inner goes near-black */
 html.dark main {
-    background: linear-gradient(to bottom, #06122a, #0f2e5a) !important;
+    background: linear-gradient(to right top, rgb(59, 130, 246), rgb(29, 78, 216)) !important;
 }
 html.dark main > div > div {
-    background: #0a1931 !important;
+    background: #0b0b0f !important;
     color: #e2e8f0;
 }
 html.dark .bg-white.rounded-xl {
-    background: #0a1931 !important;
+    background: #0b0b0f !important;
     color: #e2e8f0;
 }
 
@@ -82,7 +82,7 @@ html.dark .bg-slate-950\/\[0\.7\] {
     background-color: #1a1a20 !important;
 }
 html.dark .bg-white {
-    background-color: #0a1931 !important;
+    background-color: #0b0b0f !important;
 }
 html.dark .border-white\/\[0\.2\] {
     border-color: #475569 !important;
@@ -121,7 +121,7 @@ html.dark .blog-row .row-title {
     color: #e2e8f0 !important;
 }
 
-/* Raw-markdown doc sheet — pure white in light, dark-blue in dark */
+/* Raw-markdown doc sheet — pure white in light, near-black in dark */
 .md-sheet {
     background: #ffffff;
     color: #1a1a1a;
@@ -130,15 +130,15 @@ html.dark .blog-row .row-title {
     color: rgba(0, 0, 0, 0.45);
 }
 html.dark .md-sheet {
-    background: #0a1931 !important;
+    background: #0b0b0f !important;
     color: #d6d6db;
-    border-color: #1a2f52 !important;
+    border-color: #232329 !important;
 }
 html.dark .md-sheet .border-black\/10 {
-    border-color: #1a2f52 !important;
+    border-color: #232329 !important;
 }
 html.dark .md-sheet .border-t {
-    border-color: #1a2f52 !important;
+    border-color: #232329 !important;
 }
 html.dark .md-muted {
     color: rgba(255, 255, 255, 0.4) !important;
