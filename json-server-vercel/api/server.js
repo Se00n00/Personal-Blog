@@ -48,18 +48,18 @@ async function initMongo() {
   }
   if (mongoPromise) return mongoPromise
   mongoPromise = (async () => {
-    try {
-      mongoClient = new MongoClient(MONGODB_URI, { serverSelectionTimeoutMS: 5000 })
-      await mongoClient.connect()
-      const db = mongoClient.db('personal-blog')
-      bucket = new GridFSBucket(db, { bucketName: 'images' })
-      mongoReady = true
-      mongoError = null
-      console.log('[mongo] connected, GridFS bucket `images` ready (personal-blog)')
-    } catch (e) {
-      mongoError = e.message
-      console.warn('[mongo] connection failed — image upload disabled:', e.message)
-    }
+  try {
+    mongoClient = new MongoClient(MONGODB_URI, { serverSelectionTimeoutMS: 10000, connectTimeoutMS: 10000, socketTimeoutMS: 10000 })
+    await mongoClient.connect()
+    const db = mongoClient.db('personal-blog')
+    bucket = new GridFSBucket(db, { bucketName: 'images' })
+    mongoReady = true
+    mongoError = null
+    console.log('[mongo] connected, GridFS bucket `images` ready (personal-blog)')
+  } catch (e) {
+    mongoError = e.message
+    console.warn('[mongo] connection failed — image upload disabled:', e.message)
+  }
   })()
   return mongoPromise
 }
