@@ -1,0 +1,92 @@
+{
+  "articles": [
+    {
+      "id": "d04e66e7-caba-4155-bd6a-7aa0108b3a71",
+      "title": "Decoding Strategies in LLMs",
+      "category": "DEEP LEARNING",
+      "image": "firstblog/decodingStrategies.jpg",
+      "date": "July 22, 2025",
+      "views": 356,
+      "likes": "10",
+      "description": ""
+    },
+    {
+      "id": "40e88f87-e603-4b01-a9c1-bddb22fa4c56",
+      "title": "An Intorduction to IT Regulations in India",
+      "category": "CYBER SECURITY",
+      "image": "firstblog/itact2000.png",
+      "date": "may 13, 2025",
+      "views": 290,
+      "likes": "10",
+      "description": "An overview of the IT Act 2000 and related Indian legal frameworks addressing cybercrime, digital evidence, intermediary liability, and jurisdictional challenges. This article outlines key provisions, enforcement workflows, and international cooperation mechanisms like Interpol."
+    },
+    {
+      "id": "f4c00508-c31c-49d6-a08b-7fc940aeda7a",
+      "title": "God's Blessing on this wonderful world",
+      "category": "FIRST COMMIT",
+      "image": "firstblog/mainimage.jpg",
+      "date": "feb 9, 2025",
+      "views": 125,
+      "likes": "10",
+      "description": "Whispers from the Himalayas: A Journey Through Celestial Gardens and Eternal Peaks"
+    }
+  ],
+  "blogs": [
+    {
+      "id": "f4c00508-c31c-49d6-a08b-7fc940aeda7a",
+      "meta": {
+        "id": "f4c00508-c31c-49d6-a08b-7fc940aeda7a",
+        "title": "God's Blessing on this wonderful world",
+        "category": "FIRST COMMIT",
+        "image": "firstblog/mainimage.jpg",
+        "date": "feb 9, 2025",
+        "views": 125,
+        "likes": "10",
+        "description": "Whispers from the Himalayas: A Journey Through Celestial Gardens and Eternal Peaks"
+      },
+      "feedbacks": [
+        {
+          "sender": "author",
+          "date": "10th feb",
+          "value": "Into the blessigs of god"
+        },
+        {
+          "sender": "readers",
+          "date": "10th feb",
+          "value": "Into the blessigs of god"
+        }
+      ],
+      "content": "> And into the himalyas, I go to lose my mind and find my soul.\n> — unkown\n\n## Whispers from the Himalayas: A Journey Through Celestial Gardens and Eternal Peaks\n\nI set forth into the deep heart of the Himalayas, where the very air seemed to be painted with the hues of ancient dreams and timeless legends. As I ventured beyond the beaten path, every step became a verse in an epic poem—an invitation to explore a world that exists both within and beyond our grasp of reality.\n\n![the timless hills](firstblog/wishper.webp)\n\n## The Enchanted Hills\n\nThe mountains rose like solemn guardians, their undulating contours echoing the soft, lingering notes of a forgotten lullaby. Each hill was a masterpiece, sculpted not merely by nature but by the whispers of ages past. The peaks, veiled in delicate mists at dawn, shimmered like halos of stardust against the vast canvas of the sky. I felt as if I had stepped into a living dream—a realm where time wove itself into a tapestry of light and shadow, each thread a memory of the earth's ancient heartbeat.\n\n[My favourates Himalayas peaks](https://www.himalayanwonders.com/blog/the-14-most-beautiful-peaks-of-the-himalayas.html)"
+    },
+    {
+      "id": "40e88f87-e603-4b01-a9c1-bddb22fa4c56",
+      "meta": {
+        "id": "40e88f87-e603-4b01-a9c1-bddb22fa4c56",
+        "title": "An Intorduction to IT Regulations in India",
+        "category": "CYBER SECURITY",
+        "image": "firstblog/itact2000.png",
+        "date": "may 13, 2025",
+        "views": 290,
+        "likes": "10",
+        "description": "An overview of the IT Act 2000 and related Indian legal frameworks addressing cybercrime, digital evidence, intermediary liability, and jurisdictional challenges. This article outlines key provisions, enforcement workflows, and international cooperation mechanisms like Interpol."
+      },
+      "content": "## Introduction & Objectives\n\nThe Information Technology Act, 2000 (IT Act 2000) laid the foundational legal framework for regulating digital and online activities in India. It grants legal recognition to electronic commerce, digital records, and electronic signatures. Additionally, it aims to address cybercrime, electronic contracts, data protection, and governance in the digital domain.\n\n## Cybercrime Handling Workflow\n\nIn the event of a cybercrime, the victim reports the incident to an adjudicating officer, who assesses the nature of the case. If it is a civil issue, a penalty may be imposed. If it is criminal, it is either handled by the cyber cell or referred to the court based on severity.\n\n## Intermediary Liability\n\nAn intermediary is any entity that stores or transmits data on behalf of others—such as social media platforms or ISPs. The IT Act protects intermediaries from liability if they follow due diligence, but they lose this protection if they have knowledge of illegal content. Amendments now require compliance officers, harmful content removal, and oversight of significant social media intermediaries.\n\n## Evidentiary Value of Electronic Records\n\nDocuments like emails, SMS, and digitally signed records carry legal evidentiary value. If accompanied by a valid digital certificate, such records can be used as legal evidence in court.\n\n## Cybercrimes Under the IT Act, 2000\n\n- Section 43 – Penalty for unauthorized access, damage to computer systems.\n- Section 43A – Compensation for failure to protect sensitive data.\n- Section 66 – Hacking: Unauthorized access to computer systems.\n- Section 66A – Sending offensive messages via electronic communication.\n- Section 66C – Identity theft: Using someone else's digital identity.\n- Section 66D – Cheating by impersonation through online means.\n\n## Cybercrimes and IPC\n\n- Section 420 – Cheating and online fraud.\n- Section 469 – Forgery, including cyber forgery.\n- Section 507 – Criminal intimidation using electronic communication.\n\n## Cybercrime and the RBI Act\n\n- Section 25 – Cybersecurity in banking.\n- Section 26A – Electronic funds transfer governance.\n- Section 32 – Fraudulent practices involving digital transactions.\n\n## Cybercrime and the IPR Act\n\n- Copyright Infringement – Unauthorized sharing or use of digital media.\n- Trademark Infringement – Illegal usage of brand identities online.\n- Patent Infringement – Violation of patented technologies in digital space.\n\n## Jurisdiction and Challenges in Cybercrime Cases\n\nCybercrimes are difficult to investigate due to anonymity and limited law enforcement training. Jurisdiction is also complex as cases often cross national borders.\n\n## Challenges in International Jurisdiction\n\nCybercrimes often involve multiple legal systems. Varying laws, inconsistent enforcement, and lack of international agreements create barriers to justice.\n\n## Role of Interpol\n\n- Facilitates cross-border cybercrime investigations.\n- Shares intelligence among member nations.\n- Supports law enforcement agencies globally.\n- Collaborates with private sectors to combat cyber threats.\n\n[Official IT Act 2000](https://www.indiacode.nic.in/bitstream/123456789/13116/1/it_act_2000_updated.pdf)"
+    },
+    {
+      "id": "d04e66e7-caba-4155-bd6a-7aa0108b3a71",
+      "meta": {
+        "id": "d04e66e7-caba-4155-bd6a-7aa0108b3a71",
+        "title": "Decoding Strategies in LLMs",
+        "category": "DEEP LEARNING",
+        "image": "firstblog/decodingStrategies.jpg",
+        "date": "July 22, 2025",
+        "description": "",
+        "views": 356
+      },
+      "feedbacks": [],
+      "views": 1,
+      "content": "Large Language Models excel at predicting the next token, but their generated text often lacks coherence and diversity, limiting its overall usefulness. This is where decoding strategies come into play, helping to generate text that is more human-like and natural.\n\n[Google Collab - Decoding Strategies](https://colab.research.google.com/drive/1m_IisbR9xq_PcuBFh7YB8yJCDTIHIfzB?usp=sharing)\nCollab Notebook for this blog\n\n# Prerequisite\n\nBefore we begin, let's define the model and its tokenizer. For this blog, I am using the open-sourced `gpt-2` model.\n\n```python\nimport torch\nimport seaborn as sns\nimport matplotlib.pyplot as plt\nimport torch.nn.functional as F\nfrom transformers import AutoTokenizer, AutoModelForCausalLM\n```\n\n```python\ndevice = \"cuda\" if torch.cuda.is_available() else \"cpu\"\n\nmodel_name = \"gpt2\"\ntokenizer = AutoTokenizer.from_pretrained(model_name)\nmodel = AutoModelForCausalLM.from_pretrained(model_name).to(device)\n```\n\n# Greedy Search Decoding\n\nIn this approach, the token with the highest probability is selected as the next one. This aligns with how these models are trained — to predict the most likely next token.\n\n```python\ndef generate(prompt, max_context_length=1024):\n    input_ids = tokenizer(prompt, return_tensors=\"pt\")[\"input_ids\"].to(device)\n\n    with torch.no_grad():\n        for _ in range(max_context_length - input_ids.size(1) - 1):\n            output = model(input_ids=input_ids)\n            next_token_logits = output.logits[0, -1, :]\n            next_token_prob = torch.softmax(next_token_logits, dim=-1)\n            sorted = torch.argsort(next_token_prob, dim=-1, descending=True)\n            next_token_id = sorted[0].item()\n\n            # Stop if end-of-sequence token is generated\n            if next_token_id == tokenizer.eos_token_id:\n                break\n\n            input_ids = torch.cat([input_ids, torch.tensor([[next_token_id]], device=device)], dim=-1)\n            print(tokenizer.decode([next_token_id]), end=\"\")\n```\n\n```python\ngenerate(\"As soon he turned towards the spaceship, he saw a group of\",\n         max_context_length=100)\n\n# Generated text:\n# people standing in front of him.\n# \"What are you guys doing here?\"\n# \"We're going to take care of the ship. We're going to take care of the ship.\"\n# \"What?\"\n# \"We're going to take care of the ship. We're going to take care of the ship.\"\n# \"What?\"\n# \"We're going to take care of the ship.\n```\n\n> Greedy search selects the next token based solely on the highest immediate probability, without considering long-term structure. As a result, frequently occurring token sequences from the training data are more likely to be repeatedly selected during inference, leading to noticeable repetition.\n\n# Beam Search Decoding\n\nBeam search keeps `k` hypotheses at each step and expands them in parallel, choosing the sequences with the highest cumulative log-probability. It is less myopic than greedy search but still deterministic.\n\n```python\ndef beam_search(prompt, beam_width=3, max_context_length=50):\n    input_ids = tokenizer(prompt, return_tensors=\"pt\")[\"input_ids\"].to(device)\n    input_len = input_ids.shape[-1]\n\n    # Initialize beams: list of (tokens, score)\n    beams = [(input_ids, 0.0)]  # score is log-prob\n\n    for _ in range(max_context_length):\n        all_candidates = []\n\n        for tokens, score in beams:\n            if tokens[0, -1].item() == tokenizer.eos_token_id:\n                all_candidates.append((tokens, score))  # Don't expand completed sequences\n                continue\n\n            with torch.no_grad():\n                output = model(input_ids=tokens)\n                logits = output.logits[0, -1, :]  # Last token logits\n                probs = F.log_softmax(logits, dim=-1)  # Log-probabilities\n\n                topk_probs, topk_indices = torch.topk(probs, beam_width)\n\n                for i in range(beam_width):\n                    next_token_id = topk_indices[i].unsqueeze(0).unsqueeze(0)  # Shape (1, 1)\n                    new_tokens = torch.cat([tokens, next_token_id], dim=1)\n                    new_score = score + topk_probs[i].item()  # Accumulate log-prob\n                    all_candidates.append((new_tokens, new_score))\n\n        # Keep top-k beams\n        beams = sorted(all_candidates, key=lambda x: x[1], reverse=True)[:beam_width]\n\n        # If all beams end with EOS, stop\n        if all([tokens[0, -1].item() == tokenizer.eos_token_id for tokens, _ in beams]):\n            break\n\n    # Choose best beam\n    best_tokens = beams[0][0]\n    output_text = tokenizer.decode(best_tokens[0], skip_special_tokens=True)\n    return output_text\n```\n\n```python\nprint(beam_search(\"As soon he turned towards the spaceship, he saw a group of\", beam_width=3))\n# Output is more coherent but still favors safe, generic completions.\n# Increase beam_width for better coverage at the cost of compute.\n```\n\n> Beam search improves coherence by exploring multiple paths, but it still prefers high-probability, often bland text. Larger `beam_width` helps but does not add diversity — it just finds the safest completion.\n\n# Sampling\n\nInstead of always picking the most likely token, sampling draws the next token from the model's probability distribution. `temperature` controls sharpness — low values make the distribution peakier (more greedy), high values flatten it (more random).\n\n```python\ndef sampling_generate(prompt, temperature=1.0, max_context_length=1024):\n    input_ids = tokenizer(prompt, return_tensors=\"pt\")[\"input_ids\"].to(device)\n    with torch.no_grad():\n        for _ in range(max_context_length):\n            output = model(input_ids=input_ids)\n            next_token_logits = output.logits[0, -1, :]\n            next_token_logits = next_token_logits / temperature\n            probs = torch.softmax(next_token_logits, dim=-1)\n            next_token_id = torch.multinomial(probs, num_samples=1).item()  # Select a token\n\n            # Stop if end-of-sequence token is generated\n            if next_token_id == tokenizer.eos_token_id:\n                break\n\n            input_ids = torch.cat([input_ids, torch.tensor([[next_token_id]], device=device)], dim=-1)\n            print(tokenizer.decode([next_token_id]), end=\"\")\n```\n\n```python\nsampling_generate(\"As soon he turned towards the spaceship, he saw a group of\", temperature=0.9)\n# try temperature=0.7 for more focused, 1.2 for more creative\n```\n\n> Sampling introduces diversity, but vanilla sampling can still pick very unlikely tokens from the long tail, leading to incoherent rambling.\n\n# Sampling With Top-K and Nucleus (Top-P)\n\nTop-K limits the pool to the `k` most likely tokens. Top-P (nucleus) keeps the smallest set whose cumulative probability exceeds `p`. They are often combined, with Top-P applied first.\n\n```python\ndef sampling_generate_with_top(prompt, temperature=1.0, top_k=100, top_p=None, max_context_length=1024):\n    input_ids = tokenizer(prompt, return_tensors=\"pt\")[\"input_ids\"].to(device)\n    with torch.no_grad():\n        for _ in range(max_context_length):\n            output = model(input_ids=input_ids)\n            next_token_logits = output.logits[0, -1, :]\n            next_token_logits = next_token_logits / temperature\n\n            sorted_logits, sorted_indices = torch.sort(next_token_logits, descending=True)\n            sorted_probs = torch.softmax(sorted_logits, dim=-1)\n\n            # Apply nucleus (top-p) filtering\n            if top_p is not None:\n                cumulative_probs = torch.cumsum(sorted_probs, dim=-1)\n                cutoff_index = torch.searchsorted(cumulative_probs, top_p)\n                cutoff_index = min(cutoff_index + 1, sorted_probs.size(0))\n                sorted_probs = sorted_probs[:cutoff_index]\n                sorted_indices = sorted_indices[:cutoff_index]\n\n            # Apply top-k filtering (optional and after top-p)\n            if top_k is not None:\n                top_k = min(top_k, sorted_probs.size(0))  # in case top-p already narrowed it\n                sorted_probs = sorted_probs[:top_k]\n                sorted_indices = sorted_indices[:top_k]\n\n            filtered_probs = sorted_probs / sorted_probs.sum()\n\n            # Sample from top-k probs\n            sampled_idx = torch.multinomial(filtered_probs, num_samples=1).item()\n            next_token_id = sorted_indices[sampled_idx].item()\n\n            # Stop if end-of-sequence token is generated\n            if next_token_id == tokenizer.eos_token_id:\n                break\n\n            input_ids = torch.cat([input_ids, torch.tensor([[next_token_id]], device=device)], dim=-1)\n            print(tokenizer.decode([next_token_id]), end=\"\")\n```\n\n```python\n# Greedy-like but diverse\nsampling_generate_with_top(\"As soon he turned towards the spaceship, he saw a group of\", temperature=0.9, top_k=50, top_p=0.95)\n```\n\n> Top-K = fixed vocabulary slice, Top-P = dynamic slice based on mass. `top_p=0.95, top_k=50, temperature=0.9` is a strong default for story generation. Lower `temperature` or `top_p` for factual tasks.\n\n# Comparison\n\n- **Greedy** — fastest, deterministic, but loops and bland.\n- **Beam Search** — more coherent, still deterministic, 3-5x slower, not diverse.\n- **Sampling** — diverse, needs tuning, can be incoherent if unbounded.\n- **Top-K / Top-P** — best trade-off: controlled diversity without the tail.\n\n> When to use what: greedy/beam for translation, summarization, or when you need one best answer. Sampling + Top-P for creative writing, dialogue, and brainstorming.\n\n# Conclusion\n\nDecoding is not just an inference trick — it shapes the personality of your model. GPT-2 with greedy search sounds repetitive, with beam search it sounds safe, and with nucleus sampling it finally sounds human. Start with `temperature=0.9, top_p=0.95, top_k=50` and tune from there. Your prompt deserves more than the single most likely token.\n\n___\n\nIf you ran the notebook, try changing `temperature`, `top_k`, and `top_p` and re-generate the same prompt. The difference is immediate.\n\n[Source — Hugging Face Generation Docs](https://huggingface.co/docs/transformers/en/main_classes/text_generation)\n"
+    }
+  ],
+  "authors": []
+}

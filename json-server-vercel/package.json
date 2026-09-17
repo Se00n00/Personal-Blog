@@ -1,0 +1,16 @@
+{
+  "name": "json-server-vercel",
+  "version": "1.0.0",
+  "description": "Deploy JSON Server to Vercel",
+  "main": "api/server.js",
+  "scripts": {
+    "start": "node api/server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^16.4.5",
+    "json-server": "^0.17.4",
+    "mongodb": "^6.8.0",
+    "multer": "^1.4.5-lts.1"
+  }
+}
